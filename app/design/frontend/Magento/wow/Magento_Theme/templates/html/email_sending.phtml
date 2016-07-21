@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<?php 
+if(isset($_POST['submit'])){
+    $to = "jay.choi@leximit.com";
+    $from = $_POST['company_name'];
+    $company_name = $_POST['company_name'];
+    $order_date = $_POST['order_date'];
+    $invoice_number = $_POST['invoice_number'];
+
+    //first row info
+    $style_number1 = $_POST['style_number1'];
+    $units1 = $_POST['units1'];
+    $reason1 = $_POST['reason1'];
+
+    //second row info
+    $style_number2 = $_POST['style_number2'];
+    $units2 = $_POST['units2'];
+    $reason2 = $_POST['reason2'];
+    
+    //third row info
+    $style_number3 = $_POST['style_number3'];
+    $units3 = $_POST['units3'];
+    $reason3 = $_POST['reason3'];
+    $subject = "WOW RETAIL) RETURN REQUEST";
+    //email setting
+    $message = "The customer ".$company_name." has requested refund items below :\n\n".
+                "1. style : ".$style_number1.", units : ".$units1.", Reason for return : ".$reason1."\n\n".
+                "2. style : ".$style_number2.", units : ".$units2.", Reason for return : ".$reason2."\n\n".
+                "3. style : ".$style_number3.", units : ".$units3.", Reason for return : ".$reason3."\n\n".
+                "Order Date : ".$order_date." / Invoice # : ".$invoice_number."\n";
+    $headers = "From: ".$from;
+
+    mail($to, $subject, $message, $headers);
+
+    echo "Mail Sent. Thank you ".$company_name."!";
+
+
+
+/*
+    $to = "jay.choi@leximit.com";
+    $from = $_POST['company_name'];
+    $company_name = $_POST['company_name'];
+    $order_date = $_POST['order_date'];
+    $invoice_number = $_POST['invoice_number'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $company_name ." wrote the following:" . "\n\n" . $_POST['message'] . "\nPURCHASING DATE : ". $order_date;
+    $message2 = "Here is a copy of your message " . $company_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $company_name . ", we will contact you shortly.";
+
+    // You can also use header('Location: thank_you.php'); to redirect to another page.*/
+    }
+?>
+<br>
+<br><br><br><br><br><br>
+<a style="font-size:50px" href="../">GO BACK TO "WOW"</a>
+</body>
+</html>

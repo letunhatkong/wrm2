@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		div.table 
+		{
+		    display:table;
+		}
+		form.tr, div.tr
+		{
+		    display:table-row;
+		}
+		span.td
+		{
+		    display:table-cell;
+		}
+		span.style{
+			width: 500px;
+		}
+		span.unit{
+			width: 175px;
+		}
+		span.reason{
+			width: 325px;
+		}
+		input{
+			border: 1px solid gray;
+		}
+		input.tabletitle{
+			color:white;
+			background-color: black;
+		}
+		h3.return_subtitle{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<br>
+<div style="border: 2px solid black; padding: 20px">
+<br><br>
+<center><img width="300px" src = "http://52.38.9.201/pub/media/logo/default/logo_hdr.png"/></center>
+<br>
+<br>
+<br>
+<form action="emailsending" method="post">
+	<div class="table" style="width:100%">
+		<span class="td" style="padding-right:40px"><input type="text" placeholder="Company Name" name="company_name"/></span>
+		<span class="td" style="padding-right:40px"><input type="text" placeholder="Order Date(DD/MM/YYYY)" name="order_date"/></span>
+		<span class="td"><input type="text" placeholder="Invoice #" name="invoice_number"/></span>
+	</div>
+	<br /><br /><br />
+	<div class="table">
+		<span class="td style"><input class="tabletitle" type="text" value="STYLE #" readonly="readonly" /></span>
+		<span class="td unit"><input class="tabletitle" type="text" value="UNITS" readonly="readonly" /></span>
+		<span class="td reason"><input class="tabletitle" type="text" value="REASON FOR RETURN" readonly="readonly" /></span>
+	</div>
+	<div class="table">
+		<span class="td style"><input type="text" name="style_number1"/></span>
+		<span class="td unit"><input type="text" name="units1"/></span>
+		<span class="td reason"><input type="text" name="reason1"/></span>
+		<!-- Message:<br /><textarea name="message" rows="5" cols="30"></textarea><br /> --> 
+	</div>
+	<div class="table">
+		<span class="td style"><input type="text" name="style_number2" /></span>
+		<span class="td unit"><input type="text" name="units2" /></span>
+		<span class="td reason"><input type="text" name="reason2"/></span>
+		<!-- Message:<br /><textarea name="message" rows="5" cols="30"></textarea><br /> --> 
+	</div>
+	<div class="table">
+		<span class="td style"><input type="text" name="style_number3" /></span>
+		<span class="td unit"><input type="text" name="units3" /></span>
+		<span class="td reason"><input type="text" name="reason3" /></span>
+		<!-- Message:<br /><textarea name="message" rows="5" cols="30"></textarea><br /> --> 
+	</div>
+	<br><br>
+	<h3 class="return_subtitle">RETURNS</h3>
+	<p>MERCHANDISE MUST BE RETURNED TO OUR RETURNS DEPARTMENT WITHIN 21 DAYS OF THE DELIVERY 
+	DATE FOR A FULL REFUND MINUS SHIPPING CHANGES. ANY ITEMS SENT BACK AFTER 21 DAY 
+	PERIOD WILL NOT BE ACCEPTED, MERCHANDISE MUST BE RETURNED IN IT'S ORIGINAL CONDITIONS AND TAGS.</p><br />
+	<p>PLEASE ALLOW 2-3 BUSINESS DAYS FOR REFUND TO BE PROCESSED.</p><br /><br />
+
+	<h3 class="return_subtitle">EXCHANGES</h3>
+	<p>IF YOU WANT TO EXCHANGE YOUR ITEM FOR ANOTHER PLEASE FILL OUT THE RETURN FORM AND SUBMIT. PLEASE MAKE SURE TO INDICATE ON THE REASON FOR RETURN YOU WANT TO EXCHANGE. CUSTOMER SERVICE WILL CONTACT YOU WITH FURTHER INSTRUCTIONS AFTER THIS FORM IS SUBMITTED.</p><br /><br />
+
+	<h3 class="return_subtitle">QUESTIONS?</h3>
+	<p>PLEASE FEEL FREE TO CONTACT US IF YOU HAVE ANY QUESTIONS OR CONCERNS.</p><br />
+	
+	<p>CUSTOMER SERVICE HOURS</p>
+	<p>MONDAY-FRIDAY FRP, 8AM-6AM PST</p><br />
+	
+	<p>TELEPHONE: 213-688-9009</p>
+	<p>EMAIL: INFO@WOWCOUTURE.COM</p>
+	
+	<br /><br /><br />
+	<div><center><input style="align:center; font-size:20px" type="submit" name="submit" value="SUBMIT"/></center><div>
+	<a href="../">← back to the home</a>
+</form>
+</div>
+</body>
+</html>
