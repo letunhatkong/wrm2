@@ -16,7 +16,7 @@ body {
     display:none;
 }
 /* Grid - layout */
-#main
+
     /* # Grid - layout */
     /* image responsive */
 .img-resp {
@@ -26,7 +26,7 @@ body {
 }
 
 .product-item .price-box{
-    margin: 10px 0 0px !important;
+    margin: 10px 0 0 !important;
 }
 .img-resp > img {
     width: 100%;
