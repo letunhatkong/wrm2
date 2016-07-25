@@ -400,3 +400,16 @@ body {
 .columns .sidebar-additional{
     display: none;
 }
+
+#maincontent .page-title-wrapper{
+    display: none;
+}
+
+#cssmenu > ul ul{
+    display: none;
+}
+
+#cssmenu > ul{
+    list-style: none;
+    padding: 0;
+}
