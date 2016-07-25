@@ -277,6 +277,32 @@ body {
     color: #777;
 }
 
+
+.footer.content {
+    border-top: none;
+}
+.page-footer {
+    border-top: 1px solid #000000;
+}
+.action.primary {
+    border: 2px solid #000000;
+
+}
+@media (min-width: 768px), print {
+    .block.newsletter .action.subscribe {
+        border-radius: 0;
+    }
+}
+.action.primary:hover {
+    border: 2px solid #000000;
+}
+#newsletter {
+    border-bottom: 1px solid #737373;
+}
+.block.newsletter .field .control:before {
+    display: none;
+}
+
 @media only screen and (max-width: 1239px) {
     .page-footer .hidden-xs {
         display: none !important;
