@@ -55,6 +55,8 @@
                 </block>
             </block>
         </referenceContainer>
+
+
         <!-- Banner home -->
         <block class="Magento\Framework\View\Element\Template" name="top.slider.home" template="Magento_Theme::html/top-slider-home.phtml"/>
         <!-- Instagram block -->
@@ -66,21 +68,22 @@
         <!--LookBook -->
         <block class="Magento\Framework\View\Element\Template" name="lookbook" template="Magento_Theme::html/lookbook.phtml" />
         <!-- footer -->
-    <referenceBlock name="store_switcher" remove="true" />
-    <referenceBlock name="footer_links" remove="true" />
-    <referenceBlock name="copyright" remove="true" />
-    <referenceBlock name="report.bugs" remove="true" />
-    <referenceContainer name="footer" label="Footer"  htmlClass="container-fluid" />
- <!-- Header -->
-    <referenceContainer name="header.panel" htmlTag="div" htmlClass="panel header col-1200" />
-    <!-- Move minicart -->
-    <move element="minicart" destination="top.links" after="-"/>
-    <!-- Remove link on Top Links -->
-    <referenceBlock name="catalog.compare.link" remove="true" />
-    <referenceBlock name="register-link" remove="true" />
-    <referenceBlock name="wish-list-link" remove="true" />
-    <referenceBlock name="my-account-link" remove="true" /> 
-    <referenceBlock name="page.main.title" remove="true" />    
-    <referenceBlock name="top.search" remove="true" />
+        <referenceBlock name="store_switcher" remove="true" />
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceContainer name="footer" label="Footer"  htmlClass="container-fluid" />
+        <!-- Header -->
+        <referenceContainer name="header.panel" htmlTag="div" htmlClass="panel header col-1200" />
+        <!-- Move minicart -->
+        <move element="minicart" destination="top.links" after="-"/>
+        <!-- Remove link on Top Links -->
+        <referenceBlock name="catalog.compare.link" remove="true" />
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="my-account-link" remove="true" />
+        <referenceBlock name="top.search" remove="true" />
+
+
     </body>
 </page>

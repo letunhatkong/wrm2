@@ -1,0 +1,18 @@
+<?php
+$product = $block->getProduct();
+?>
+
+<div class="detailInfoWrapper">
+    <div class="lineDP"></div>
+    <div class="staticLinkDP">
+        <a href="javascript:void(0);"><span>Size Guide</span></a>
+        <span class="divideSpan">/</span>
+        <a href="javascript:void(0);"><span>Shipping</span></a>
+        <span class="divideSpan">/</span>
+        <a href="javascript:void(0);"><span>Return and Exchange</span></a>
+    </div>
+    <div class="detailInner"><?= $product->getDescription() ?></div>
+    <div class="lineDP"></div>
+</div>
+
+

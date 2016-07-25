@@ -7,114 +7,119 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
 $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
 ?>
 
-<footer class="page-footer"><div class="footer content">
-    <div class="row">
-    
-    <!--1st-->
-    <div class="col-sm-3">
-        <ul class="footer links">
-            <li>
-                <h4>ABOUT US</h4>
-            </li>
-            <li class="nav item">
-                <a href="about">Company</a>
-            </li>
-            <li class="nav item">
-                <a href="contact-us">Contact Us</a>
-            </li>
-        </ul>
-    </div>
-    <!--2nd-->
-    <div class="col-sm-3">
-        <ul class="footer links">
-            <li>
-                <h4>CARE</h4>
-            </li>
-            <li class="nav item">
-                <a href="size_guide">Size Guide</a>
-            </li>
-            <li class="nav item">
-                <a href="ship_return">Shipping and Return</a>
-            </li>
-            <li class="nav item">
-                <a href="privacy-policy">Privacy Policy</a>
-            </li>
-        </ul>
-    </div>
-    <!--3rd-->
-    <div class="col-sm-3">
-        <ul class="footer links">
-            <li>
-                <h4>JOIN OUR MAILING LIST</h4>
-                <p style="color:gray">Enter your email address below:</p>
-            </li>
-            <li>
-                <div class="block newsletter">
-                    <div class="title">
-                        <strong>JOIN OUR MAILING</strong><br>
+<footer class="page-footer">
+    <div class="footer content">
+        <div class="row">
 
-                    </div>
-                    <div class="content">
-                        <form class="form subscribe" novalidate="novalidate" action="http://52.41.73.201/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
-                            <div class="field newsletter">
-<!--                                 <label class="label" for="newsletter">
-                                    
-                                </label> -->
-                                <div class="control">
-                                    <input name="email" type="email" id="newsletter" data-validate="{required:true, 'validate-email':true}">
-                                </div>
-                            </div>
-                        <!-- <div class="actions"> -->
-                            <div>
-                            <button class="action subscribe primary" title="Subscribe" type="submit">
-                                <span>SUBMIT</span>
-                            </button>
-                        </div>
-                </form>
+            <!--1st-->
+            <div class="col-sm-3">
+                <ul class="footer links">
+                    <li>
+                        <h4>ABOUT US</h4>
+                    </li>
+                    <li class="nav item">
+                        <a href="about">Company</a>
+                    </li>
+                    <li class="nav item">
+                        <a href="contact-us">Contact Us</a>
+                    </li>
+                </ul>
             </div>
+            <!--2nd-->
+            <div class="col-sm-3">
+                <ul class="footer links">
+                    <li>
+                        <h4>CARE</h4>
+                    </li>
+                    <li class="nav item">
+                        <a href="size_guide">Size Guide</a>
+                    </li>
+                    <li class="nav item">
+                        <a href="ship_return">Shipping and Return</a>
+                    </li>
+                    <li class="nav item">
+                        <a href="privacy-policy">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+            <!--3rd-->
+            <div class="col-sm-3">
+                <ul class="footer links">
+                    <li>
+                        <h4>JOIN OUR MAILING LIST</h4>
+                        <p style="color:gray">Enter your email address below:</p>
+                    </li>
+                    <li>
+                        <div class="block newsletter">
+                            <div class="title">
+                                <strong>JOIN OUR MAILING</strong><br>
+
+                            </div>
+                            <div class="content">
+                                <form class="form subscribe" novalidate="novalidate"
+                                      action="http://52.41.73.201/newsletter/subscriber/new/" method="post"
+                                      id="newsletter-validate-detail">
+                                    <div class="field newsletter">
+                                        <!--                                 <label class="label" for="newsletter">
+
+                                                                        </label> -->
+                                        <div class="control">
+                                            <input name="email" type="email" id="newsletter"
+                                                   data-validate="{required:true, 'validate-email':true}">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="actions"> -->
+                                    <div>
+                                        <button class="action subscribe primary" title="Subscribe" type="submit">
+                                            <span>SUBMIT</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul class="footer links">
+                    <li>
+                        <h4 style="font-weight:bold">FOLLOW US</h4>
+                        <div class="col-sm-4 logo1">
+                            <a href="https://www.instagram.com/sivaoutlet/" target="_blank">
+                                <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_instagram.png"/>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 logo1">
+                            <a href="https://www.facebook.com/sivaoutlet" target="_blank">
+                                <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_facebook.png"/>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 logo1">
+                            <a href="https://www.pinterest.com/SivaOutlet/" target="_blank">
+                                <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_pinterest.png"/>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
         </div>
-            </li>
-        </ul>
     </div>
-    <div class="col-sm-3">
-        <ul class="footer links">
-            <li>
-                <h4 style="font-weight:bold">FOLLOW US</h4>
-                <div class="col-sm-4 logo1">
-                    <a href="https://www.instagram.com/sivaoutlet/" target="_blank">
-                    <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_instagram.png"/>
-                </a>
-                </div>
-                <div class="col-sm-4 logo1">
-                <a href="https://www.facebook.com/sivaoutlet" target="_blank">
-                    <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_facebook.png" />
-                </a>
-                </div>
-                <div class="col-sm-4 logo1">
-                    <a href="https://www.pinterest.com/SivaOutlet/" target="_blank">
-                    <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_pinterest.png" />
-                    </a>
-                </div>
-            </li>
-            
-        </ul>
-    </div>
-
-</div>
-
-
 </footer>
+
 <div class="row" style="background:black; color:white;">
     <div class="col-sm-12" style="text-align:center;">
         <p>©2016 WOWCOUTURE Wow Couture</p>
-    </div>  
+    </div>
 </div>
+
 <script type="text/javascript">
-    require(['jquery', 'jquery/ui'], function($){
-        $(document).ready(function($) {
+    require(['jquery', 'jquery/ui'], function ($) {
+        $(document).ready(function ($) {
             var $window = $(window);
             // Click function
-            $('.itemMenuFt .titFt').click(function(){
+            $('.itemMenuFt .titFt').click(function () {
                 if ($window.width() < 1240) {
                     var subMenu = $(this).parent().find('.subMenuFt');
                     subMenu.toggle();
@@ -127,9 +132,10 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
             });
             // Reset Footer
             function resetFooter() {
-                $('.subMenuFt').attr("style","");
+                $('.subMenuFt').attr("style", "");
                 $('.itemMenuFt .titFt').removeClass("open");
             }
+
             // Check Width
             function checkWidth() {
                 var windowSize = $window.width();
@@ -137,6 +143,7 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
                     resetFooter();
                 }
             }
+
             // Resize
             checkWidth();
             $(window).resize(checkWidth);
