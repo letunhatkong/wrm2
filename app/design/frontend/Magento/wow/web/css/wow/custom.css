@@ -2,8 +2,21 @@
 @import "styles-l.css";
 @import "custom2.css";
 
+/*css for list product au Lam*/
+
+.product-item-info .product-item-inner{
+    display:none;
+}
+
+.product-item .price-box{
+    margin: 10px 0 0px !important;
+}
 
 
 
 
+/*navigation list product*/
 
+.columns .sidebar-additional{
+    display: none;
+}
