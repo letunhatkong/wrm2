@@ -9,16 +9,12 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
 
 <footer class="page-footer">
     <div class="footer content">
-        <div class="row" id="footer-default" ismobile-data="1">
-
+        <div class="row" id="footer-default" data-mobile="">
             <!--1st-->
             <div class="col-sm-3 box-footer">
-                <span class="title-section-footer">ABOUT US</span>
+                <h4 class="title-section-footer">ABOUT US</h4>
                 <a href="javascript:void(0);" class="click-ft-item"><span class="footer-scroll"></span></a>
                 <ul class="footer links ft-sub-item">
-<!--                    <li>-->
-<!--                        <h4>ABOUT US</h4>-->
-<!--                    </li>-->
                     <li class="nav item">
                         <a href="about">Company</a>
                     </li>
@@ -29,12 +25,9 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
             </div>
             <!--2nd-->
             <div class="col-sm-3 box-footer">
-                <span class="title-section-footer">CARE</span>
+                <h4 class="title-section-footer">CARE</h4>
                 <a href="javascript:void(0);" class="click-ft-item"><span class="footer-scroll"></span></a>
                 <ul class="footer links ft-sub-item">
-<!--                    <li>-->
-<!--                        <h4>CARE</h4>-->
-<!--                    </li>-->
                     <li class="nav item">
                         <a href="size_guide">Size Guide</a>
                     </li>
@@ -48,27 +41,19 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
             </div>
             <!--3rd-->
             <div class="col-sm-3 box-footer">
-                <span class="title-section-footer">JOIN OUR MAILING LIST</span>
+                <h4 class="title-section-footer">JOIN OUR MAILING LIST</h4>
                 <a href="javascript:void(0);" class="click-ft-item"><span class="footer-scroll"></span></a>
                 <ul class="footer links ft-sub-item">
                     <li>
-<!--                        <h4>JOIN OUR MAILING LIST</h4>-->
                         <p style="color:gray">Enter your email address below:</p>
                     </li>
                     <li>
                         <div class="block newsletter">
-<!--                            <div class="title">-->
-<!--                                <strong>JOIN OUR MAILING</strong><br>-->
-<!---->
-<!--                            </div>-->
                             <div class="content">
                                 <form class="form subscribe" novalidate="novalidate"
                                       action="http://52.41.73.201/newsletter/subscriber/new/" method="post"
                                       id="newsletter-validate-detail">
                                     <div class="field newsletter">
-                                        <!--                                 <label class="label" for="newsletter">
-
-                                                                        </label> -->
                                         <div class="control">
                                             <input name="email" type="email" id="newsletter"
                                                    data-validate="{required:true, 'validate-email':true}">
@@ -87,69 +72,63 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
                 </ul>
             </div>
             <div class="col-sm-3 box-footer">
-                <span class="title-section-footer" style="font-weight:bold; margin-left: 10px;">FOLLOW US</span>
+                <h4 class="title-section-footer">FOLLOW US</h4>
                 <a href="javascript:void(0);" class="click-ft-item"><span class="footer-scroll"></span></a>
                 <ul class="footer links ft-sub-item">
-                    <li>
-<!--                        <h4 style="font-weight:bold">FOLLOW US</h4>-->
-                        <div class="col-sm-4 logo1">
-                            <a href="https://www.instagram.com/sivaoutlet/" target="_blank">
-                                <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_instagram.png"/>
-                            </a>
-                        </div>
-                        <div class="col-sm-4 logo1">
-                            <a href="https://www.facebook.com/sivaoutlet" target="_blank">
-                                <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_facebook.png"/>
-                            </a>
-                        </div>
-                        <div class="col-sm-4 logo1">
-                            <a href="https://www.pinterest.com/SivaOutlet/" target="_blank">
-                                <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_pinterest.png"/>
-                            </a>
-                        </div>
-                    </li>
-
+                    <div class="socialFooter">
+                        <a href="https://www.instagram.com/sivaoutlet/" target="_blank">
+                            <img src="<?= $mediaUrl ?>images/icon/social/logo_instagram.png"/>
+                        </a>
+                        <a href="https://www.facebook.com/sivaoutlet" target="_blank">
+                            <img src="<?= $mediaUrl ?>images/icon/social/logo_facebook.png"/>
+                        </a>
+                        <a href="https://www.pinterest.com/SivaOutlet/" target="_blank">
+                            <img src="<?= $mediaUrl ?>images/icon/social/logo_pinterest.png"/>
+                        </a>
+                    </div>
                 </ul>
             </div>
-
         </div>
     </div>
 </footer>
 
-<div class="row" style="background:black; color:white;">
-    <div class="col-sm-12" style="text-align:center;">
-        <p>©2016 WOWCOUTURE Wow Couture</p>
-    </div>
+<div class="copyRight">
+    <p>©2016 WOWCOUTURE Wow Couture</p>
 </div>
 
 <script type="text/javascript">
     require(['jquery', 'jquery/ui'], function ($) {
         $(document).ready(function ($) {
             var $window = $(window);
-            // Click function
-            $('.itemMenuFt .titFt').click(function () {
-                if ($window.width() < 1240) {
-                    var subMenu = $(this).parent().find('.subMenuFt');
-                    subMenu.toggle();
-                    if (subMenu.is(":visible")) {
-                        $(this).addClass("open");
-                    } else {
+
+            $('.click-ft-item').click(function () {
+                var curWidth = $window.width();
+                if (curWidth < 768) {
+                    var isOpen = $(this).hasClass("open");
+                    if (isOpen) {
                         $(this).removeClass("open");
+                    } else {
+                        $('#footer-default .open').removeClass('open');
+                        $(this).addClass("open");
                     }
                 }
             });
-            // Reset Footer
+
             function resetFooter() {
-                $('.subMenuFt').attr("style", "");
-                $('.itemMenuFt .titFt').removeClass("open");
+                $('#footer-default .click-ft-item').removeClass("open");
             }
 
-            // Check Width
+
             function checkWidth() {
                 var windowSize = $window.width();
-                if (windowSize >= 1240) {
-                    resetFooter();
+                var currDevice = $('#footer-default').attr("data-mobile");
+                var isMobile = (windowSize < 768) ? true : false;
+                if (currDevice == "1") {
+                    if (!isMobile) resetFooter();
+                } else if (currDevice == "0") {
+                    if (isMobile) resetFooter();
                 }
+                (isMobile) ? $('#footer-default').attr("data-mobile", "1") : $('#footer-default').attr("data-mobile", "0");
             }
 
             // Resize
@@ -157,54 +136,5 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
             $(window).resize(checkWidth);
         });
     });
-</script>
-<script type="text/javascript">
-    jQuery( document ).ready(function(jQuery) {
-        var $window = jQuery(window);
-        function checkWidth() {
-            var windowsize = $window.width();
-            var isMobile = (windowsize < 768) ? 1 : 0;
-            var currentDevice =  jQuery("#footer-default").attr("isMobile-data");
-            if (currentDevice == "1") {
-                if (!isMobile) resetFooterSm();
-            } else {
-                (isMobile) ? resetFooterXs(): resetFooterSm();
-            }
-            jQuery("#footer-default").attr("isMobile-data", isMobile);
-        }
-        // Reset status begin mobile
-        function resetFooterXs() {
-            jQuery(".ft-sub-item").css("display", "none");
-            jQuery('.click-ft-item').attr("check-data", "0");
-
-
-            jQuery(this).addClass("carrot");
-            jQuery(this).removeClass("carrot-tru");
-        }
-        // Reset status begin  # Mobile
-        function resetFooterSm() {
-            jQuery(".ft-sub-item").css("display", "block");
-            jQuery('.click-ft-item').attr("check-data", "0");
-
-            jQuery(this).addClass("carrot-tru");
-            jQuery(this).removeClass("carrot");
-        }
-        // Check width begin first time
-        checkWidth();
-        jQuery(window).resize(checkWidth);
-        jQuery('.click-ft-item').click(function(){
-            var curWidth = $window.width();
-            if (curWidth < 768) {
-                var isOpen = jQuery(this).hasClass("carrot-tru");
-                if (isOpen) {
-                    jQuery(this).removeClass("carrot-tru");
-                } else {
-                    jQuery('#footer-default .carrot-tru').removeClass('carrot-tru');
-                    jQuery(this).addClass("carrot-tru");
-                }
-            }
-        });
-    });
-
 
 </script>

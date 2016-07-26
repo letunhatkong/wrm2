@@ -26,10 +26,6 @@ body {
     display: none;
 }
 
-/* Grid - layout */
-
-/* # Grid - layout */
-/* image responsive */
 /* image responsive */
 .img-resp {
     position: relative;
@@ -151,6 +147,7 @@ body {
 /* # GRID */
 
 /* Footer */
+
 .page-footer {
     background: white;
     padding: 0;
@@ -387,6 +384,118 @@ body {
 }
 
 /* # Footer */
+.footer.content .links {
+    padding: 0;
+}
+
+.copyRight {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.copyRight > p {
+    margin: 0;
+}
+
+.socialFooter {
+    margin: 0 0 15px;
+}
+
+.socialFooter a {
+    margin: 0 5px 0 0;
+    text-decoration: none !important;
+}
+
+.socialFooter img {
+    width: 40px;
+}
+
+@media only screen and (min-width: 768px), print {
+    .footer.content .block {
+        float: none;
+    }
+
+    .block.newsletter .action.subscribe {
+        border-radius: 0;
+        margin-top: 12px;
+    }
+
+    .box-footer ul li a {
+        color: #737373;
+        font-size: 15px;
+    }
+
+    .box-footer ul li p {
+        color: #737373;
+        font-size: 15px;
+    }
+
+    .box-footer h4 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .click-ft-item {
+        background: url(/pub/media/images/icon/add.png) no-repeat center;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+    }
+
+    .box-footer h4 {
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    #footer-default .ft-sub-item {
+        display: none;
+    }
+
+    #footer-default .click-ft-item.open + .ft-sub-item {
+        display: block;
+    }
+
+    .click-ft-item.open {
+        background-image: url(/pub/media/images/icon/tru.png);
+    }
+
+    .box-footer {
+        border-top: 1px solid #000000;
+    }
+
+    .footer.content {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .box-footer ul li a {
+        color: #737373;
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    .page-footer {
+        border-top: 0;
+    }
+
+    .socialFooter {
+        margin: 0 0 15px 10px;
+    }
+
+    .box-footer ul li p {
+        color: #737373;
+        font-size: 15px;
+        padding-left: 15px;
+    }
+
+    .block.newsletter {
+        padding-left: 15px;
+    }
+}
 
 /* detail page */
 .lineDP {
