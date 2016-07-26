@@ -6,33 +6,71 @@ $baseUrl = $currentStore->getBaseUrl();
 $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
 $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
 
-$banners = $_objectManager->get('Sahy\Banner\Block\Frontend\Banners');
-$_sub = $banners->getHomeBottomContentcollection();
+$sa = $_objectManager->get('Sahy\Banner\Block\Frontend\Banners');
+$banners = $sa->getAllBannerByType($sa::TYPE_HOME_BANNER);
+$_sub = $sa->getAllBannerByType($sa::TYPE_SUB_BANNER);
 ?>
 
-<div class="row threeCategory">
-    <?php $i = 1; ?>
-    <?php foreach($_sub as $item) { ?>
-        <?php if ($i <= 2) { ?>
-            <div class="col-xs-12 col-sm-6">
-                <a href="<?= $item['link'] ?>">
-                    <img class="img-full" src="<?= $mediaUrl . $item['image'] ?>"/>
-                </a>
+<?php $size = count($banners); ?>
+<div id="bannerHS" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <?php $i = 1; ?>
+        <?php foreach ($banners as $bn) { ?>
+            <div class="item <?= ($i == 1) ? 'active' : '' ?>">
+                <img src="<?= $mediaUrl . $bn['image'] ?>"/>
             </div>
+            <?php $i++; ?>
         <?php } ?>
-		<?php if ($i > 2) { ?>
-            <div class="col-xs-12 col-sm-12" style="padding-bottom: 20px; padding-top: 20px">
-                <a href="<?= $item['link'] ?>">
-                    <img class="img-full" src="<?= $mediaUrl . $item['image'] ?>"/>
-                </a>
-            </div>
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#bannerHS" role="button" data-slide="prev">
+        <div class="prevButtonWrap sliderIcon" aria-hidden="true">
+            <img src="<?= $mediaUrl ?>images/icon/pLeft.png"/>
+        </div>
+    </a>
+    <a class="right carousel-control" href="#bannerHS" role="button" data-slide="next">
+        <div class="nextButtonWrap sliderIcon" aria-hidden="true">
+            <img src="<?= $mediaUrl ?>images/icon/pRight.png"/>
+        </div>
+    </a>
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <?php $i = 0 ?>
+        <?php foreach ($banners as $bn) { ?>
+            <li data-target="#bannerHS" data-slide-to="<?= $i ?>" class="<?= ($i == 0) ? 'active' : '' ?>"></li>
+            <?php $i++; ?>
         <?php } ?>
-        <?php $i++; ?>
-    <?php } ?>
+    </ol>
 </div>
-<div class="clearfix pad30"></div>
-<!-- # Sub Banner  -->
-  <!-- SNS SIVA -->
+
+<div class="col-1025">
+    <div class="row subBanner">
+        <div class="col-xs-12 col-sm-12 sumHome">CHECK OUT OUR LATEST STYLE GUIDE</div>
+        <?php $i = 1; ?>
+        <?php foreach($_sub as $item) { ?>
+            <?php if ($i <= 2) { ?>
+                <div class="col-xs-12 col-sm-6">
+                    <a href="<?= $item['link'] ?>">
+                        <img class="img-full" src="<?= $mediaUrl . $item['image'] ?>"/>
+                    </a>
+                </div>
+            <?php } ?>
+            <?php if ($i > 2) { ?>
+                <div class="col-xs-12 col-sm-12">
+                    <a href="<?= $item['link'] ?>">
+                        <img class="img-full" src="<?= $mediaUrl . $item['image'] ?>"/>
+                    </a>
+                </div>
+            <?php } ?>
+            <?php $i++; ?>
+        <?php } ?>
+    </div>
+    <div class="clearfix pad30"></div>
+    <!-- # Sub Banner  -->
+
+    <!-- SNS SIVA -->
     <?php
     function fetchData($url){
         $ch = curl_init();
@@ -48,7 +86,9 @@ $_sub = $banners->getHomeBottomContentcollection();
     $result = json_decode($result);
     ?>
 
-    <!-- <p class="headHome">SNS @ SIVA</p> -->
+    <p class="headHome">#WOWCOUTURE</p>
+    <div class="sumHome">Check out #WOWCouture to see who's wearing us now -- on the street and the Red Carpet!</div>
+
     <div id="snsSiva" class="carousel slide productSlider" data-ride="carousel" data-interval="false">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
@@ -86,9 +126,5 @@ $_sub = $banners->getHomeBottomContentcollection();
             </div>
         </a>
     </div>
-<style type="text/css">
-    #maincontent {
-        margin-top: 0;
-    }
-    
-</style>
+
+</div>

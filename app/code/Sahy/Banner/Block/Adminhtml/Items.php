@@ -11,9 +11,9 @@ class Items extends \Magento\Backend\Block\Widget\Grid\Container
      */
     protected function _construct()
     {
-        $this->_controller = 'items';
-        $this->_headerText = __('Items');
-        $this->_addButtonLabel = __('Add New Item');
+        $this->_controller = 'Home Banner';
+        $this->_headerText = __('Home Banner');
+        $this->_addButtonLabel = __('Add New Banner');
         parent::_construct();
     }
 }

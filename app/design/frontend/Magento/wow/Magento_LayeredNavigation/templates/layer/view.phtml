@@ -108,14 +108,13 @@ foreach ($categoryy as $cate){
                     <a href="<?php echo ($hasSub) ? 'javascript:void(0);' : $key["url"] ?>" title="<?= $key['name'] ?>">
                     <span>
                         <?php
-                        echo ($hasSub) ? '<em class="txtDropCategory">(+)</em> ':"";
                         echo $key['name'];
                         ?>
                     </span>
                     </a>
 
                     <?php if($hasSub){ ?>
-                        <ul>
+                        <ul class="sub-active">
                             <?php foreach ($key["subCategories"] as $subCate) { ?>
                                 <li>
                                     <a href="<?= $subCate['url']?>" title="<?= $subCate['name']?>">
@@ -131,30 +130,3 @@ foreach ($categoryy as $cate){
     </div>
 </div>
 
-<script type="text/javascript">
-    require([ 'jquery', 'jquery/ui'], function($){
-        $( document ).ready(function() {
-            $('#cssmenu > ul > li > a').click(function() {
-                $('#cssmenu li').removeClass('active');
-                $(this).closest('li').addClass('active');
-
-                var checkElement = $(this).next();
-                if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-                    $(this).closest('li').removeClass('active');
-                    checkElement.slideUp('normal');
-                    $(this).find("em.txtDropCategory").text("(+)");
-                }
-                if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-                    $('#cssmenu ul ul:visible').slideUp('normal');
-                    checkElement.slideDown('normal');
-                    $(this).find("em.txtDropCategory").text("(-)");
-                }
-                if($(this).closest('li').find('ul').children().length == 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
-        })
-    });
-</script>
