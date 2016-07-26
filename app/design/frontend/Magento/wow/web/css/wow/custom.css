@@ -18,6 +18,10 @@ body {
     overflow-x: hidden;
 }
 
+.abs-action-addto-product, .block-event .slider-panel .slider .item .action.event, .bundle-options-container .block-bundle-summary .product-addto-links > .action, .product-info-main .action.tocompare, .product-options-bottom .action.tocompare, .product-info-main .action.towishlist, .product-options-bottom .action.towishlist, .block-bundle-summary .action.towishlist, select {
+    font-family: "ProximaNovaCond-Regular", Arial, sans-serif;
+}
+
 .product-item-info .product-item-inner {
     display: none;
 }
@@ -221,11 +225,10 @@ body {
 
 .action.primary {
     background: #fff none;
-
     color: black;
     cursor: pointer;
     display: inline-block;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "ProximaNovaCond-Regular", Arial, sans-serif;
     font-weight: 400;
     padding: 7px 15px;
     font-size: 14px;
@@ -245,7 +248,6 @@ body {
     border: none;
     cursor: pointer;
     display: inline-block;
-    font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
     padding: 7px 15px;
     font-size: 14px;
@@ -304,10 +306,6 @@ body {
     .block.newsletter .action.subscribe {
         border-radius: 0;
     }
-}
-
-.action.primary:hover {
-    border: 2px solid #000000;
 }
 
 #newsletter {
@@ -465,15 +463,57 @@ body {
     width: 100%;
 }
 
+#product_addtocart_form .box-tocart {
+    width: 240px;
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+#product_addtocart_form .box-tocart .actions {
+    float: left;
+    width: 100%;
+}
+
+#product_addtocart_form .product-addto-links {
+    float: left;
+    margin: 108px 0 0;
+}
+
+#product_addtocart_form .product-addto-links a {
+    background: transparent;
+    color: #000;
+    border: 0;
+    font-size: 16px;
+    font-weight: normal;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    padding: 0 0 5px;
+}
+
+.catalog-product-view #product-addtocart-button, .catalog-product-view #product-addtocart-button:hover {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 0;
+    background: #000;
+    color: #fff;
+    border: 0;
+}
+
+.catalog-product-view .product-social-links {
+    margin: 20px 0 0;
+}
+
+.catalog-product-view .product-social-links a {
+    text-decoration: none !important;
+    margin: 0 10px 0 0;
+}
+
 /* # Detail page */
 
 /* list page */
 
 .columns .sidebar-additional {
-    display: none;
-}
-
-#maincontent .page-title-wrapper {
     display: none;
 }
 
