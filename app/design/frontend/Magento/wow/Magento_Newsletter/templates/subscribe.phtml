@@ -9,14 +9,16 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
 
 <footer class="page-footer">
     <div class="footer content">
-        <div class="row">
+        <div class="row" id="footer-default" ismobile-data="1">
 
             <!--1st-->
-            <div class="col-sm-3">
-                <ul class="footer links">
-                    <li>
-                        <h4>ABOUT US</h4>
-                    </li>
+            <div class="col-sm-3 box-footer">
+                <span class="title-section-footer">ABOUT US</span>
+                <a href="javascript:void(0);" class="click-ft-item"><span class="footer-scroll"></span></a>
+                <ul class="footer links ft-sub-item">
+<!--                    <li>-->
+<!--                        <h4>ABOUT US</h4>-->
+<!--                    </li>-->
                     <li class="nav item">
                         <a href="about">Company</a>
                     </li>
@@ -26,11 +28,13 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
                 </ul>
             </div>
             <!--2nd-->
-            <div class="col-sm-3">
-                <ul class="footer links">
-                    <li>
-                        <h4>CARE</h4>
-                    </li>
+            <div class="col-sm-3 box-footer">
+                <span class="title-section-footer">CARE</span>
+                <a href="javascript:void(0);" class="click-ft-item"><span class="footer-scroll"></span></a>
+                <ul class="footer links ft-sub-item">
+<!--                    <li>-->
+<!--                        <h4>CARE</h4>-->
+<!--                    </li>-->
                     <li class="nav item">
                         <a href="size_guide">Size Guide</a>
                     </li>
@@ -43,18 +47,20 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
                 </ul>
             </div>
             <!--3rd-->
-            <div class="col-sm-3">
-                <ul class="footer links">
+            <div class="col-sm-3 box-footer">
+                <span class="title-section-footer">JOIN OUR MAILING LIST</span>
+                <a href="javascript:void(0);" class="click-ft-item"><span class="footer-scroll"></span></a>
+                <ul class="footer links ft-sub-item">
                     <li>
-                        <h4>JOIN OUR MAILING LIST</h4>
+<!--                        <h4>JOIN OUR MAILING LIST</h4>-->
                         <p style="color:gray">Enter your email address below:</p>
                     </li>
                     <li>
                         <div class="block newsletter">
-                            <div class="title">
-                                <strong>JOIN OUR MAILING</strong><br>
-
-                            </div>
+<!--                            <div class="title">-->
+<!--                                <strong>JOIN OUR MAILING</strong><br>-->
+<!---->
+<!--                            </div>-->
                             <div class="content">
                                 <form class="form subscribe" novalidate="novalidate"
                                       action="http://52.41.73.201/newsletter/subscriber/new/" method="post"
@@ -80,10 +86,12 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-3">
-                <ul class="footer links">
+            <div class="col-sm-3 box-footer">
+                <span class="title-section-footer" style="font-weight:bold; margin-left: 10px;">FOLLOW US</span>
+                <a href="javascript:void(0);" class="click-ft-item"><span class="footer-scroll"></span></a>
+                <ul class="footer links ft-sub-item">
                     <li>
-                        <h4 style="font-weight:bold">FOLLOW US</h4>
+<!--                        <h4 style="font-weight:bold">FOLLOW US</h4>-->
                         <div class="col-sm-4 logo1">
                             <a href="https://www.instagram.com/sivaoutlet/" target="_blank">
                                 <img class="logo1" src="<?= $mediaUrl ?>images/icon/social/logo_instagram.png"/>
@@ -149,4 +157,54 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
             $(window).resize(checkWidth);
         });
     });
+</script>
+<script type="text/javascript">
+    jQuery( document ).ready(function(jQuery) {
+        var $window = jQuery(window);
+        function checkWidth() {
+            var windowsize = $window.width();
+            var isMobile = (windowsize < 768) ? 1 : 0;
+            var currentDevice =  jQuery("#footer-default").attr("isMobile-data");
+            if (currentDevice == "1") {
+                if (!isMobile) resetFooterSm();
+            } else {
+                (isMobile) ? resetFooterXs(): resetFooterSm();
+            }
+            jQuery("#footer-default").attr("isMobile-data", isMobile);
+        }
+        // Reset status begin mobile
+        function resetFooterXs() {
+            jQuery(".ft-sub-item").css("display", "none");
+            jQuery('.click-ft-item').attr("check-data", "0");
+
+
+            jQuery(this).addClass("carrot");
+            jQuery(this).removeClass("carrot-tru");
+        }
+        // Reset status begin  # Mobile
+        function resetFooterSm() {
+            jQuery(".ft-sub-item").css("display", "block");
+            jQuery('.click-ft-item').attr("check-data", "0");
+
+            jQuery(this).addClass("carrot-tru");
+            jQuery(this).removeClass("carrot");
+        }
+        // Check width begin first time
+        checkWidth();
+        jQuery(window).resize(checkWidth);
+        jQuery('.click-ft-item').click(function(){
+            var curWidth = $window.width();
+            if (curWidth < 768) {
+                var isOpen = jQuery(this).hasClass("carrot-tru");
+                if (isOpen) {
+                    jQuery(this).removeClass("carrot-tru");
+                } else {
+                    jQuery('#footer-default .carrot-tru').removeClass('carrot-tru');
+                    jQuery(this).addClass("carrot-tru");
+                }
+            }
+        });
+    });
+
+
 </script>
