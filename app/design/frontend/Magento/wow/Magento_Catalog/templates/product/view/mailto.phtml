@@ -1,0 +1,21 @@
+<?php
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of \Magento\Framework\App\ObjectManager
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$baseUrl = $currentStore->getBaseUrl();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
+?>
+<?php $_product = $block->getProduct() ?>
+
+<div>
+    <a href="#">
+        <img src="<?= $mediaUrl ?>/images/icon/detail/insta.png" />
+    </a>
+    <a href="#">
+        <img src="<?= $mediaUrl ?>/images/icon/detail/fb.png" />
+    </a>
+    <a href="#">
+        <img src="<?= $mediaUrl ?>/images/icon/detail/print.png" />
+    </a>
+</div>
