@@ -1,18 +1,58 @@
 <?php
 $product = $block->getProduct();
+
+$size = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('size_popup')->toHtml();
+$ship = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ship_popup')->toHtml();
+$return = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('return_popup')->toHtml();
+
 ?>
 
 <div class="detailInfoWrapper">
     <div class="lineDP"></div>
     <div class="staticLinkDP">
-        <a href="javascript:void(0);"><span>Size Guide</span></a>
+        <a href="javascript:void(0);" class="clickPopUpDP" data-content="#size_pop">
+            <span>Size Guide</span>
+        </a>
         <span class="divideSpan">/</span>
-        <a href="javascript:void(0);"><span>Shipping</span></a>
+        <a href="javascript:void(0);" class="clickPopUpDP" data-content="#ship_pop">
+            <span>Shipping</span>
+        </a>
         <span class="divideSpan">/</span>
-        <a href="javascript:void(0);"><span>Return and Exchange</span></a>
+        <a href="javascript:void(0);" class="clickPopUpDP" data-content="#return_pop">
+            <span>Return and Exchange</span>
+        </a>
+
+        <div class="popUpDetailPage">
+            <div class="wrap">
+                <div class="closeOnDetail">( Close )</div>
+                <div class="contentWrap">
+                    <div class="content" id="size_pop"><?= $size ?></div>
+                    <div class="content" id="ship_pop"><?= $ship ?></div>
+                    <div class="content" id="return_pop"><?= $return ?></div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
     <div class="detailInner"><?= $product->getDescription() ?></div>
     <div class="lineDP"></div>
 </div>
 
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function($){
+        $(document).ready(function($) {
+            $('.clickPopUpDP').click(function(){
+                var id = $(this).attr("data-content");
+                $('.popUpDetailPage .content').addClass("hidden");
+                $(id).removeClass("hidden");
+                $('.popUpDetailPage').addClass('open');
+            });
+            $('.closeOnDetail').click(function(){
+                $('.popUpDetailPage').removeClass('open');
+            });
+
+        });
+    });
+</script>
 
