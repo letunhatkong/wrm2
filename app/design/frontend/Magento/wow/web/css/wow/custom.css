@@ -12,22 +12,24 @@ body {
     overflow-x: hidden;
 }
 
-.product-item-info .product-item-inner{
-    display:none;
+.product-item-info .product-item-inner {
+    display: none;
 }
+
 /* Grid - layout */
 
-    /* # Grid - layout */
-    /* image responsive */
+/* # Grid - layout */
+/* image responsive */
 .img-resp {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-.product-item .price-box{
+.product-item .price-box {
     margin: 10px 0 0 !important;
 }
+
 .img-resp > img {
     width: 100%;
     height: auto;
@@ -277,28 +279,33 @@ body {
     color: #777;
 }
 
-
 .footer.content {
     border-top: none;
 }
+
 .page-footer {
     border-top: 1px solid #000000;
 }
+
 .action.primary {
     border: 2px solid #000000;
 
 }
+
 @media (min-width: 768px), print {
     .block.newsletter .action.subscribe {
         border-radius: 0;
     }
 }
+
 .action.primary:hover {
     border: 2px solid #000000;
 }
+
 #newsletter {
     border-bottom: 1px solid #737373;
 }
+
 .block.newsletter .field .control:before {
     display: none;
 }
@@ -368,6 +375,55 @@ body {
 }
 
 /* # Footer */
+@media only screen and (max-width: 767px) {
+    .box-footer .click-ft-item {
+        background: url('/pub/media/images/icon/add.png') no-repeat;
+        width: 12px;
+        height: 10px;
+        margin-left: 14px;
+        display: inline-block;
+    }
+
+    #footer-default {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .box-footer .carrot-tru {
+        background: url('/pub/media/images/icon/tru.png') no-repeat;
+    }
+
+    .ft-sub-item {
+        display: none;
+    }
+
+    #footer-default .click-ft-item.carrot-tru + .ft-sub-item {
+        display: block;
+    }
+
+    .box-footer {
+        border-top: 1px solid #000000;
+        padding: 18px 10px;
+    }
+
+    .footer.content {
+        padding: 0;
+    }
+
+    .page-footer {
+        border-top: none;
+        padding: 0;
+    }
+
+    .box-footer .links {
+        padding: 10px !important;
+    }
+}
+
+.title-section-footer {
+    font-weight: 700;
+    font-size: 15px;
+}
 
 /* detail page */
 .lineDP {
@@ -416,13 +472,10 @@ body {
     vertical-align: top;
 }
 
-
 /* # Detail page */
-
-
 
 /*navigation list product*/
 
-.columns .sidebar-additional{
+.columns .sidebar-additional {
     display: none;
 }
