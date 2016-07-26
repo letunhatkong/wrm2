@@ -1,7 +1,7 @@
 /* CSS of JAY */
 @import "styles-m.css";
 @import "styles-l.css";
-@import "custom2.css";
+/*@import "custom2.css";*/
 /* # CSS of JAY */
 
 /*css for list product au Lam*/
@@ -12,22 +12,24 @@ body {
     overflow-x: hidden;
 }
 
-.product-item-info .product-item-inner{
-    display:none;
+.product-item-info .product-item-inner {
+    display: none;
 }
+
 /* Grid - layout */
 
-    /* # Grid - layout */
-    /* image responsive */
+/* # Grid - layout */
+/* image responsive */
 .img-resp {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-.product-item .price-box{
+.product-item .price-box {
     margin: 10px 0 0 !important;
 }
+
 .img-resp > img {
     width: 100%;
     height: auto;
@@ -124,9 +126,9 @@ body {
     }
 }
 
-@media only screen and (min-width: 1240px) {
+@media only screen and (min-width: 1025px) {
     .col-1200, #maincontent {
-        width: 1200px !important;
+        width: 1025px !important;
         margin-left: auto !important;
         margin-right: auto !important;
         padding-left: 0 !important;
@@ -277,28 +279,33 @@ body {
     color: #777;
 }
 
-
 .footer.content {
     border-top: none;
 }
+
 .page-footer {
     border-top: 1px solid #000000;
 }
+
 .action.primary {
     border: 2px solid #000000;
 
 }
+
 @media (min-width: 768px), print {
     .block.newsletter .action.subscribe {
         border-radius: 0;
     }
 }
+
 .action.primary:hover {
     border: 2px solid #000000;
 }
+
 #newsletter {
     border-bottom: 1px solid #737373;
 }
+
 .block.newsletter .field .control:before {
     display: none;
 }
@@ -416,26 +423,35 @@ body {
     vertical-align: top;
 }
 
-
 /* # Detail page */
-
-
 
 /*navigation list product*/
 
-.columns .sidebar-additional{
+.columns .sidebar-additional {
     display: none;
 }
 
-#maincontent .page-title-wrapper{
-    display: none;
-}
-
-#cssmenu > ul ul{
-    display: none;
-}
-
-#cssmenu > ul{
+#cssmenu > ul {
     list-style: none;
     padding: 0;
+}
+
+.sub-active {
+    display: none;
+    list-style: none;
+}
+
+.has-sub:hover .sub-active {
+    display: block;
+}
+.toolbar-products .sorter{
+    float: left;
+}
+@media (min-width: 768px) {
+    .breadcrumbs {
+        max-width: 1025px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
 }
