@@ -56,6 +56,9 @@
             </block>
         </referenceContainer>
 
+        <!-- Move breadcrumbs -->
+        <move element="breadcrumbs" before="main" destination="columns" />
+        <move before="-" element="page.main.title" destination="main" />
 
         <!-- Banner home -->
         <block class="Magento\Framework\View\Element\Template" name="top.slider.home" template="Magento_Theme::html/top-slider-home.phtml"/>
