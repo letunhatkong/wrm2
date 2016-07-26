@@ -21,5 +21,8 @@
 
         <block class="Magento\Framework\View\Element\Template" name="collapse_detail" template="Magento_Catalog::product/view/collapse_detail.phtml" />
         <move element="collapse_detail" destination="product.info.main" before="-"/>
+
+        <move element="product.info.addto" destination="product.info.options.wrapper.bottom" after="-"/>
+
     </body>
 </page>

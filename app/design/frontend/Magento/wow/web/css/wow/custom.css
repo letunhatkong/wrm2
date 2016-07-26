@@ -225,10 +225,11 @@ body {
 
 .action.primary {
     background: #fff none;
+
     color: black;
     cursor: pointer;
     display: inline-block;
-    font-family: "ProximaNovaCond-Regular", Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
     padding: 7px 15px;
     font-size: 14px;
@@ -248,6 +249,7 @@ body {
     border: none;
     cursor: pointer;
     display: inline-block;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
     padding: 7px 15px;
     font-size: 14px;
@@ -306,6 +308,10 @@ body {
     .block.newsletter .action.subscribe {
         border-radius: 0;
     }
+}
+
+.action.primary:hover {
+    border: 2px solid #000000;
 }
 
 #newsletter {
@@ -517,10 +523,6 @@ body {
     display: none;
 }
 
-#cssmenu > ul ul {
-    display: none;
-}
-
 #cssmenu > ul {
     list-style: none;
     padding: 0;
@@ -533,6 +535,117 @@ body {
 
 .toolbar-products .sorter {
     float: left;
+}
+
+#cssmenu .has-sub a:hover .sub-active {
+    display: block;
+}
+
+.toolbar-products .pages {
+    float: right !important;
+    display: block;
+}
+
+.pager-next {
+    display: none;
+}
+
+.pages-items .item {
+    margin: 0 10px;
+}
+
+a {
+    color: #474747 !important;
+}
+
+.view-all {
+    text-decoration: underline;
+}
+
+.pages-items .current .page {
+    border: 1px solid;
+    padding: 0 9px;
+    line-height: 24px;
+}
+
+.toolbar-sorter .sort-asc {
+    display: none;
+}
+
+.catalog-category-view .columns .breadcrumbs {
+    padding-left: 0;
+}
+
+.catalog-category-view .sidebar .filter-title {
+    display: none;
+}
+
+#textImgtop {
+    display: none;
+}
+
+.catalog-category-view .category-image {
+    display: none;
+}
+
+.catalog-category-view .category-description {
+    display: none;
+}
+
+.catalog-category-view .page-title-wrapper {
+    display: block;
+}
+
+#page-title-heading {
+    font-size: 24px;
+}
+
+#maincontent .toolbar-products {
+    margin-bottom: 0;
+}
+
+#layered-filter-block .title-sidaber {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#cssmenu > ul > li {
+    font-size: 12px;
+}
+
+#cssmenu > ul > li > ul > li {
+    font-size: 10px;
+}
+
+.breadcrumbs > ul > li {
+    font-size: 10px;
+}
+
+.breadcrumbs .items .home a, .breadcrumbs .items .item strong {
+    color: #7b7b7b !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .catalog-category-view .columns .breadcrumbs {
+        display: none;
+    }
+
+    #textImgtop {
+        display: block;
+        font-size: 24px;
+    }
+
+    .catalog-category-view .category-image {
+        display: block;
+    }
+
+    .catalog-category-view .category-description {
+        display: block;
+    }
+
+    .catalog-category-view .page-title-wrapper {
+        display: none;
+    }
 }
 
 /* # list page */
