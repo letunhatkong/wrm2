@@ -18,14 +18,14 @@ body {
     overflow-x: hidden;
 }
 
+.abs-action-addto-product, .block-event .slider-panel .slider .item .action.event, .bundle-options-container .block-bundle-summary .product-addto-links > .action, .product-info-main .action.tocompare, .product-options-bottom .action.tocompare, .product-info-main .action.towishlist, .product-options-bottom .action.towishlist, .block-bundle-summary .action.towishlist, select {
+    font-family: "ProximaNovaCond-Regular", Arial, sans-serif;
+}
+
 .product-item-info .product-item-inner {
     display: none;
 }
 
-/* Grid - layout */
-
-/* # Grid - layout */
-/* image responsive */
 /* image responsive */
 .img-resp {
     position: relative;
@@ -147,6 +147,7 @@ body {
 /* # GRID */
 
 /* Footer */
+
 .page-footer {
     background: white;
     padding: 0;
@@ -383,6 +384,118 @@ body {
 }
 
 /* # Footer */
+.footer.content .links {
+    padding: 0;
+}
+
+.copyRight {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.copyRight > p {
+    margin: 0;
+}
+
+.socialFooter {
+    margin: 0 0 15px;
+}
+
+.socialFooter a {
+    margin: 0 5px 0 0;
+    text-decoration: none !important;
+}
+
+.socialFooter img {
+    width: 40px;
+}
+
+@media only screen and (min-width: 768px), print {
+    .footer.content .block {
+        float: none;
+    }
+
+    .block.newsletter .action.subscribe {
+        border-radius: 0;
+        margin-top: 12px;
+    }
+
+    .box-footer ul li a {
+        color: #737373;
+        font-size: 15px;
+    }
+
+    .box-footer ul li p {
+        color: #737373;
+        font-size: 15px;
+    }
+
+    .box-footer h4 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .click-ft-item {
+        background: url(/pub/media/images/icon/add.png) no-repeat center;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+    }
+
+    .box-footer h4 {
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    #footer-default .ft-sub-item {
+        display: none;
+    }
+
+    #footer-default .click-ft-item.open + .ft-sub-item {
+        display: block;
+    }
+
+    .click-ft-item.open {
+        background-image: url(/pub/media/images/icon/tru.png);
+    }
+
+    .box-footer {
+        border-top: 1px solid #000000;
+    }
+
+    .footer.content {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .box-footer ul li a {
+        color: #737373;
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    .page-footer {
+        border-top: 0;
+    }
+
+    .socialFooter {
+        margin: 0 0 15px 10px;
+    }
+
+    .box-footer ul li p {
+        color: #737373;
+        font-size: 15px;
+        padding-left: 15px;
+    }
+
+    .block.newsletter {
+        padding-left: 15px;
+    }
+}
 
 /* detail page */
 .lineDP {
@@ -463,6 +576,52 @@ body {
     overflow-y: scroll;
     float: left;
     width: 100%;
+}
+
+#product_addtocart_form .box-tocart {
+    width: 240px;
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+#product_addtocart_form .box-tocart .actions {
+    float: left;
+    width: 100%;
+}
+
+#product_addtocart_form .product-addto-links {
+    float: left;
+    margin: 108px 0 0;
+}
+
+#product_addtocart_form .product-addto-links a {
+    background: transparent;
+    color: #000;
+    border: 0;
+    font-size: 16px;
+    font-weight: normal;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    padding: 0 0 5px;
+}
+
+.catalog-product-view #product-addtocart-button, .catalog-product-view #product-addtocart-button:hover {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 0;
+    background: #000;
+    color: #fff;
+    border: 0;
+}
+
+.catalog-product-view .product-social-links {
+    margin: 20px 0 0;
+}
+
+.catalog-product-view .product-social-links a {
+    text-decoration: none !important;
+    margin: 0 10px 0 0;
 }
 
 /* # Detail page */
@@ -601,6 +760,10 @@ a {
 /* # list page */
 
 /* Home Page */
+.cms-home .page-title-wrapper {
+    display: none;
+}
+
 .cms-home #maincontent {
     width: 100% !important;
     padding: 0 !important;
