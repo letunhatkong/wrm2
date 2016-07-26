@@ -760,6 +760,10 @@ a {
 /* # list page */
 
 /* Home Page */
+.cms-home .page-title-wrapper {
+    display: none;
+}
+
 .cms-home #maincontent {
     width: 100% !important;
     padding: 0 !important;
