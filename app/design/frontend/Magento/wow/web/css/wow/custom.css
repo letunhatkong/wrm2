@@ -4,11 +4,17 @@
 /*@import "custom2.css";*/
 /* # CSS of JAY */
 
-/*css for list product au Lam*/
+@font-face {
+    font-family: 'ProximaNovaCond-Regular';
+    src: url('font/ProximaNovaCond-Regular.eot?#iefix') format('embedded-opentype'), url('font/ProximaNovaCond-Regular.woff') format('woff'), url('font/ProximaNovaCond-Regular.ttf') format('truetype'), url('font/ProximaNovaCond-Regular.svg#ProximaNovaCond-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     color: #000;
     font-size: 14px;
-    font-family: "Helvetica", Arial, sans-serif;
+    font-family: "ProximaNovaCond-Regular", Arial, sans-serif;
     overflow-x: hidden;
 }
 
@@ -103,10 +109,15 @@ body {
 #maincontent {
     margin-top: 20px;
     z-index: 0;
+    max-width: 100%;
 }
 
-@media only screen and (max-width: 1239px) {
-    .col-1200, #maincontent {
+.col-1025 {
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 1044px) {
+    .col-1025, #maincontent {
         width: 100%;
         padding-left: 20px !important;
         padding-right: 20px !important;
@@ -116,18 +127,14 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-    .col-1200, #maincontent {
+    .col-1025, #maincontent {
         padding-left: 10px !important;
         padding-right: 10px !important;
     }
-
-    #maincontent, #homePage {
-        margin-top: 70px;
-    }
 }
 
-@media only screen and (min-width: 1025px) {
-    .col-1200, #maincontent {
+@media only screen and (min-width: 1045px) {
+    .col-1025, #maincontent {
         width: 1025px !important;
         margin-left: auto !important;
         margin-right: auto !important;
@@ -423,11 +430,53 @@ body {
     vertical-align: top;
 }
 
+.popUpDetailPage {
+    border: 1px solid #000;
+    background: #fff;
+    z-index: 1;
+    display: none;
+    margin: 10px 0 0;
+}
+
+.popUpDetailPage.open {
+    display: block;
+}
+
+.popUpDetailPage .wrap {
+    position: relative;
+    padding: 15px 20px 20px;
+    overflow: hidden;
+}
+
+.closeOnDetail {
+    position: relative;
+    float: right;
+    color: #999;
+    padding: 0 0 10px;
+    cursor: pointer;
+}
+
+.popUpDetailPage .contentWrap {
+    position: relative;
+    max-height: 200px;
+    overflow-y: scroll;
+    float: left;
+    width: 100%;
+}
+
 /* # Detail page */
 
-/*navigation list product*/
+/* list page */
 
 .columns .sidebar-additional {
+    display: none;
+}
+
+#maincontent .page-title-wrapper {
+    display: none;
+}
+
+#cssmenu > ul ul {
     display: none;
 }
 
@@ -441,17 +490,98 @@ body {
     list-style: none;
 }
 
+.toolbar-products .sorter {
+    float: left;
+}
+
+/* # list page */
+
+/* Home Page */
+.cms-home #maincontent {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
 .has-sub:hover .sub-active {
     display: block;
 }
-.toolbar-products .sorter{
-    float: left;
-}
-@media (min-width: 768px) {
-    .breadcrumbs {
-        max-width: 1025px;
-        padding-left: 0;
-        padding-right: 0;
-    }
 
+.carousel.slide .slideCtr {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 40px;
 }
+
+.carousel.slide .slideCtr.prevButtonWrap {
+    left: 0;
+}
+
+.carousel.slide .slideCtr.nextButtonWrap {
+    right: 0;
+}
+
+.carousel.slide .slideCtr > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0.3;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.carousel.slide .slideCtr:hover > img {
+    opacity: 1;
+}
+
+.sliderIcon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -17px;
+}
+
+.sliderIcon:hover {
+    opacity: 1;
+}
+
+#bannerHS {
+    margin: 0 0 40px;
+}
+
+#bannerHS .carousel-control {
+    width: 45px;
+}
+
+#bannerHS .item > img {
+    width: 100%;
+}
+
+.sumHome {
+    font-size: 16px;
+    text-align: center;
+    padding: 0 0 15px;
+}
+
+.subBanner > div {
+    padding: 10px;
+}
+
+p.headHome {
+    text-align: center;
+    font-size: 30px;
+    padding: 0;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 767px) {
+    p.headHome {
+        font-size: 18px;
+    }
+}
+
+/* # Home Page */
