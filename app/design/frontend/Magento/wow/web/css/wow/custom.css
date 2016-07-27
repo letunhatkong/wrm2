@@ -723,60 +723,60 @@ body {
 /*.fotorama__thumb-border,*/
 /*.fotorama__stage.fotorama__shadows--left:before, .fotorama__nav.fotorama__shadows--left:before,*/
 /*.fotorama__stage.fotorama__shadows--right:after, .fotorama__nav.fotorama__shadows--right:after {*/
-    /*display: none;*/
+/*display: none;*/
 /*}*/
 
 /*.fotorama__arr--disabled {*/
-    /*opacity: 1;*/
+/*opacity: 1;*/
 /*}*/
 
 /*.fotorama__nav-wrap--vertical.fotorama__nav-wrap {*/
-    /*position: relative;*/
-    /*float: left;*/
-    /*width: 80px;*/
-    /*padding: 0;*/
+/*position: relative;*/
+/*float: left;*/
+/*width: 80px;*/
+/*padding: 0;*/
 /*}*/
 
 /*.fotorama__nav--thumbs {*/
-    /*padding: 27px 0;*/
-    /*height: 580px !important;*/
+/*padding: 27px 0;*/
+/*height: 580px !important;*/
 /*}*/
 
 /*.fotorama__nav-wrap--horizontal .fotorama__thumb__arr--left,*/
 /*.fotorama__nav-wrap--horizontal .fotorama__thumb__arr--right {*/
-    /*background: none;*/
+/*background: none;*/
 /*}*/
 
 /*.fotorama__nav-wrap--horizontal .fotorama__thumb__arr--left .fotorama__thumb__arr {*/
-    /*background: url('/pub/media/images/icon/pLeft.png') no-repeat center;*/
+/*background: url('/pub/media/images/icon/pLeft.png') no-repeat center;*/
 /*}*/
 
 /*.fotorama__nav-wrap--horizontal .fotorama__thumb__arr--right .fotorama__thumb__arr {*/
-    /*background: url('/pub/media/images/icon/pRight.png') no-repeat center;*/
+/*background: url('/pub/media/images/icon/pRight.png') no-repeat center;*/
 /*}*/
 
 /*.fotorama__nav-wrap .fotorama_vertical_ratio .fotorama__img {*/
-    /*-webkit-transform: none;*/
-    /*-ms-transform: none;*/
-    /*-o-transform: none;*/
-    /*transform: none;*/
-    /*position: relative;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*width: 100%;*/
-    /*height: auto;*/
+/*-webkit-transform: none;*/
+/*-ms-transform: none;*/
+/*-o-transform: none;*/
+/*transform: none;*/
+/*position: relative;*/
+/*top: 0;*/
+/*left: 0;*/
+/*width: 100%;*/
+/*height: auto;*/
 /*}*/
 
 /*.fotorama__nav__frame--thumb.fotorama__active > .fotorama__thumb {*/
-    /*border: 1px solid #000;*/
-    /*padding: 5px;*/
-    /*background: #fff;*/
+/*border: 1px solid #000;*/
+/*padding: 5px;*/
+/*background: #fff;*/
 /*}*/
 
 /*.fotorama__nav--thumbs .fotorama__nav__frame {*/
-    /*padding: 6px 0 0 !important;*/
-    /*width: 100% !important;*/
-    /*height: auto !important;*/
+/*padding: 6px 0 0 !important;*/
+/*width: 100% !important;*/
+/*height: auto !important;*/
 /*}*/
 
 /* Thumb */
