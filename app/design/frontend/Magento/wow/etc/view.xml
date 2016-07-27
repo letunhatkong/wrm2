@@ -85,8 +85,8 @@
                 <height>900</height>
             </image>
             <image id="product_page_image_small" type="thumbnail">
-                <width>99</width>
-                <height>148</height>
+                <width>80</width>
+                <height>120</height>
             </image>
             <image id="product_page_main_image" type="image">
                 <width>600</width>
@@ -199,7 +199,7 @@
             <var name="navdir">vertical</var> <!-- Sliding direction of thumbnails (horizontal/vertical) -->
             <var name="navarrows">true</var> <!-- Turn on/off on the thumbs navigation sides (true/false) -->
             <var name="navtype">slides</var> <!-- Sliding type of thumbnails (slides/thumbs) -->
-            <var name="thumbmargin">10px</var>
+            <var name="thumbmargin">20</var>
             <var name="transition">
                 <var name="effect">slide</var> <!-- Sets transition effect for slides changing (slide/crossfade/dissolve) -->
                 <var name="duration">500</var> <!-- Sets transition duration in ms -->
@@ -211,8 +211,8 @@
                 <var name="arrows">true</var> <!-- Turn on/off arrows on the sides preview (true/false/null) -->
                 <var name="caption">false</var> <!-- Display alt text as image title (true/false) -->
                 <var name="navdir">vertical</var> <!--Sliding direction of thumbnails in full screen(horizontal/vertical)  -->
-                <var name="thumbwidth">180</var> <!-- Width of thumbnails in fullscreen -->
-                <var name="thumbheight">240</var> <!-- Height of thumbnails in fullscreen -->
+                <var name="thumbwidth">80</var> <!-- Width of thumbnails in fullscreen -->
+                <var name="thumbheight">120</var> <!-- Height of thumbnails in fullscreen -->
                 <var name="navigation_carousel">true</var> <!-- Display navigation thumbs as carousel (true/false) -->
                 <var name="transition">
                     <var name="effect">crossfade</var> <!-- Sets transition effect for slides changing (slide/crossfade/dissolve) -->
