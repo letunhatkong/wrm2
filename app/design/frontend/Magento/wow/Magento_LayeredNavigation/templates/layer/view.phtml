@@ -22,111 +22,80 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
 
 <?php if ($block->canShowBlock()): ?>
     <div class="block filter">
-        <div class="block-title filter-title">
-            <strong><?php /* @escapeNotVerified */ echo __('Categories') ?></strong>
-        </div>
 
         <div class="block-content filter-content">
             <?php echo $block->getChildHtml('state') ?>
 
             <?php if ($block->getLayer()->getState()->getFilters()): ?>
-                <div class="block-actions filter-actions">
-                    <a href="<?php /* @escapeNotVerified */ echo $block->getClearUrl() ?>" class="action clear filter-clear"><span><?php /* @escapeNotVerified */ echo __('Clear All') ?></span></a>
-                </div>
+
             <?php endif; ?>
             <?php $wrapOptions = false; ?>
             <?php foreach ($block->getFilters() as $filter): ?>
         <?php if (!$wrapOptions): ?>
-            <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?php /* @escapeNotVerified */ echo __('Shopping Options') ?></strong>
+            <strong role="heading" aria-level="2"
+                    class="block-subtitle filter-subtitle"><?= __('Shopping Options') ?></strong>
             <dl class="filter-options" id="narrow-by-list">
-                <?php $wrapOptions = true; endif; ?>
+                <?php $wrapOptions = true;
+                endif; ?>
                 <?php if ($filter->getItemsCount()): ?>
-                    <dt role="heading" aria-level="3" class="filter-options-title"><?php echo $block->escapeHtml(__($filter->getName())) ?></dt>
-                    <dd class="filter-options-content"><?php /* @escapeNotVerified */ echo $block->getChildBlock('renderer')->render($filter); ?></dd>
+                    <dt role="heading" aria-level="3"
+                        class="filter-options-title"><?php echo $block->escapeHtml(__($filter->getName())) ?></dt>
+                    <dd class="filter-options-content"><?= $block->getChildBlock('renderer')->render($filter); ?></dd>
                 <?php endif; ?>
                 <?php endforeach; ?>
                 <?php if ($wrapOptions): ?>
             </dl>
         <?php endif; ?>
+
+            <div class="fitter-list">
+                <form action="<?= $curUrl . '' ?>" method="get">
+                    <label class="sel no-icon-mobile checkbox">
+                        <a class="fitter-choose" href="javascript:void(0);"><span class="123">Color</span>
+                            <span class="fitter-sign"></span></a>
+                    </label><br>
+                    <div class="fitter-box">
+                        <label class="sel no-icon-mobile checkbox">
+                            <input id="check_0" type="checkbox" name="color" value="7">
+                            <span class="Black">Black</span>
+                        </label><br>
+                        <label class="sel no-icon-mobile checkbox">
+                            <input id="check_0" type="checkbox" name="color" value="8">
+                            <span class="White">White</span>
+                        </label><br>
+                        <label class="sel no-icon-mobile checkbox">
+                            <input id="check_0" type="checkbox" name="color" value="9">
+                            <span class="Red">Red</span>
+                        </label><br>
+                        <input type="submit" value="APPLY">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+    <script type="text/javascript">
+        require(['jquery', 'jquery/ui'], function ($) {
+            $(document).ready(function ($) {
+
+                $('.fitter-list .fitter-choose').click(function () {
+                    var isOpen = $('.fitter-list .fitter-sign').hasClass("open");
+                    if (isOpen) {
+                        $('.fitter-list .fitter-sign').removeClass("open");
+                        $('.fitter-list .fitter-box').removeClass("active");
+                    } else {
+                        $('.fitter-list .fitter-sign').removeClass('open');
+                        $('.fitter-list .fitter-sign').addClass("open");
+                        $('.fitter-list .fitter-box').addClass("active");
+                    }
+                });
+
+            });
+        });
+    </script>
+
+
 <?php endif; ?>
 
 
 
 
-
-
-<?php
-$objectManagerr = \Magento\Framework\App\ObjectManager::getInstance();
-$categoryFactory = $objectManagerr->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
-$categoryy = $categoryFactory->create()
-    ->addAttributeToFilter('is_active','1')
-    ->addAttributeToSelect('name');
-
-$category_ar = []; $rootId = 0; $first = false;
-foreach ($categoryy as $cate){
-
-    $curId = intval($cate->getId());
-    $parentId = intval($cate->getParentID());
-
-    if ($parentId == 1 && !$first) { $rootId = $curId; $first = true; }
-
-    if (isset($parentId) && $rootId > 0 && $parentId == $rootId) {
-        $category_ar[$curId] = [
-            "id" => $curId,
-            "name" => $cate->getName(),
-            "url" => $cate->getURL(),
-            "parentId" => $parentId,
-            "isActive" => 1,
-            "subCategories" => []
-        ];
-    } else if ($parentId != $rootId && $first && $parentId != 1) {
-        if (isset($category_ar[$parentId])) {
-            $len = count($category_ar[$parentId]["subCategories"]);
-            $category_ar[$parentId]["subCategories"][$len] = [
-                "id" => $curId,
-                "name" => $cate->getName(),
-                "url" => $cate->getURL(),
-                "parentId" => $parentId,
-                "isActive" => 1
-            ];
-        }
-    }
-}
-?>
-
-<div class="block filter categorySidebar" id="layered-filter-block" >
-    <h4 class="title-sidaber title-">CATEGORIES</h4>
-    <div id='cssmenu'>
-        <ul>
-            <?php
-            foreach ($category_ar as $key) {
-                $hasSub = (is_array($key["subCategories"]) && count($key["subCategories"]) > 0) ? true:false;
-                ?>
-                <li class='has-sub'>
-                    <a href="<?php echo ($hasSub) ? 'javascript:void(0);' : $key["url"] ?>" title="<?= $key['name'] ?>">
-                    <span>
-                        <?php
-                        echo $key['name'];
-                        ?>
-                    </span>
-                    </a>
-
-                    <?php if($hasSub){ ?>
-                        <ul class="sub-active">
-                            <?php foreach ($key["subCategories"] as $subCate) { ?>
-                                <li>
-                                    <a href="<?= $subCate['url']?>" title="<?= $subCate['name']?>">
-                                        <span><?= $subCate['name']?></span>
-                                    </a>
-                                </li>
-                            <?php } ?>
-                        </ul>
-                    <?php } ?>
-                </li>
-            <?php } ?>
-        </ul>
-    </div>
-</div>
 

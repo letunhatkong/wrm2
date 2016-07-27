@@ -628,10 +628,6 @@ body {
 
 /* list page */
 
-.columns .sidebar-additional {
-    display: none;
-}
-
 #cssmenu > ul {
     list-style: none;
     padding: 0;
@@ -681,22 +677,13 @@ a {
     display: none;
 }
 
-.catalog-category-view .columns .breadcrumbs {
-    padding-left: 0;
+.catalog-category-view .breadcrumbs {
+    padding: 0;
+    width: 100%;
 }
 
-.catalog-category-view .sidebar .filter-title {
-    display: none;
-}
-
-#textImgtop {
-    display: none;
-}
-
-.catalog-category-view .category-image {
-    display: none;
-}
-
+.catalog-category-view .sidebar .filter-title,
+#textImgtop, .catalog-category-view .category-image,
 .catalog-category-view .category-description {
     display: none;
 }
@@ -726,16 +713,49 @@ a {
     font-size: 10px;
 }
 
-.breadcrumbs > ul > li {
+.catalog-category-view .breadcrumbs > ul > li {
     font-size: 10px;
 }
 
-.breadcrumbs .items .home a, .breadcrumbs .items .item strong {
+.catalog-category-view .breadcrumbs .items .home a,
+.catalog-category-view .breadcrumbs .items .item strong {
     color: #7b7b7b !important;
 }
 
+/*test fitter list*/
+.fitter-box {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    background: white;
+}
+
+.fitter-list .active {
+    display: block !important;
+    background: white;
+    padding: 0 5px 5px;
+    border: 1px solid;
+    margin-left: -22px;
+    width: 99px;
+}
+
+.fitter-list {
+    display: inline-block;
+    border: 1px solid;
+    padding: 5px 21px;
+}
+
+.fitter-list .fitter-sign {
+    background: url(/pub/media/images/icon/add.png) no-repeat center;
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+}
+
+/* # test fitter list*/
+
 @media only screen and (max-width: 767px) {
-    .catalog-category-view .columns .breadcrumbs {
+    .catalog-category-view .breadcrumbs {
         display: none;
     }
 
@@ -755,6 +775,65 @@ a {
     .catalog-category-view .page-title-wrapper {
         display: none;
     }
+
+    .catalog-category-view .sidebar-additional {
+        order: 0;
+    }
+
+    .open .sign {
+        background: url(/pub/media/images/icon/tru.png) no-repeat center !important;
+    }
+
+    .has-sub .sign {
+        background: url(/pub/media/images/icon/add.png) no-repeat center;
+        display: inline-block;
+        width: 50px;
+        height: 10px;
+    }
+
+    #cssmenu .sub-active {
+        display: none;
+    }
+
+    #cssmenu .open .sub-active {
+        display: block;
+    }
+
+    #layered-filter-block {
+        border: 1px solid;
+    }
+
+    #layered-filter-block .title-sidaber {
+        margin: 10px;
+        display: inline-block;
+    }
+
+    #layered-filter-block #cssmenu {
+        display: none;
+        margin: 10px;
+    }
+
+    #layered-filter-block .active {
+        display: block !important;
+    }
+
+    #layered-filter-block > .sign {
+        background: url(/pub/media/images/icon/add.png) no-repeat center;
+        display: inline-block;
+        width: 50px;
+        height: 10px;
+    }
+
+    #layered-filter-block > .open {
+        background: url(/pub/media/images/icon/tru.png) no-repeat center !important;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    .has-sub:hover .sub-active {
+        display: block;
+    }
 }
 
 /* # list page */
@@ -767,10 +846,6 @@ a {
 .cms-home #maincontent {
     width: 100% !important;
     padding: 0 !important;
-}
-
-.has-sub:hover .sub-active {
-    display: block;
 }
 
 .carousel.slide .slideCtr {

@@ -92,5 +92,17 @@
             </arguments>
             <block class="Magento\Catalog\Block\Category\Rss\Link" name="rss.link" template="Magento_Catalog::category/rss.phtml"/>
         </referenceBlock>
+
+        <block class="Magento\Framework\View\Element\Template" name="category.list" template="Magento_Theme::html/categories-left-menu.phtml"/>
+
+        <!-- Move breadcrumbs -->
+        <move element="breadcrumbs" before="-" destination="sidebar.additional" />
+        <!-- Move category list -->
+        <move element="category.list" destination="sidebar.additional" after="-" />
+        <!-- Move title -->
+        <move before="-" element="page.main.title" destination="main" />
+        <!-- Move Filter -->
+        <move element="catalog.leftnav" destination="main" after="page.main.title"/>
+
     </body>
 </page>

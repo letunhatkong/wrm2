@@ -113,11 +113,9 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
                     }
                 }
             });
-
             function resetFooter() {
                 $('#footer-default .click-ft-item').removeClass("open");
             }
-
 
             function checkWidth() {
                 var windowSize = $window.width();
@@ -136,5 +134,4 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
             $(window).resize(checkWidth);
         });
     });
-
 </script>
