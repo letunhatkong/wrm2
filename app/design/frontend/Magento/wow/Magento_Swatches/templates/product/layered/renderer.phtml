@@ -14,17 +14,17 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
 ?>
 
 <?php $swatchData = $block->getSwatchData(); ?>
+
 <div class="swatch-attribute swatch-layered <?= $swatchData['attribute_code'] ?>"
      attribute-code="<?= $swatchData['attribute_code'] ?>" attribute-id="174">
 
-    <div class="fitter-list">
+    <div class="filter-list">
         <form action="<?= $curUrl . '' ?>" method="get">
             <label class="sel no-icon-mobile checkbox">
-                <a class="fitter-choose" href="javascript:void(0);"><span class="123"><?= $swatchData['attribute_code'] ?></span>
-                    <span class="fitter-sign"></span></a>
+                <a class="filter-choose-<?= $swatchData['attribute_code'] ?>" href="javascript:void(0);"><span class="123"><?= $swatchData['attribute_code'] ?></span>
+                    <span class="filter-sign"></span></a>
             </label><br>
-            <div class="fitter-box">
-
+            <div class="filter-box-<?= $swatchData['attribute_code'] ?>">
 
 
     <div class="swatch-attribute-options clearfix">
@@ -80,7 +80,7 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
             </a>
         <?php endforeach; ?>
     </div>
-                <input type="submit" value="APPLY">
+                <input type="submit" value="APPLY" class="filter-submit">
             </div>
         </form>
     </div>

@@ -1151,10 +1151,6 @@ a {
     line-height: 24px;
 }
 
-.toolbar-sorter .sort-asc {
-    display: none;
-}
-
 .catalog-category-view .breadcrumbs {
     padding: 0;
     width: 100%;
@@ -1201,33 +1197,50 @@ a {
 }
 
 /*test fitter list*/
-.fitter-box {
+.filter-box-color, .filter-box-price, .filter-box-sort {
     display: none;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     background: white;
 }
 
-.fitter-list .active {
+.filter-box-sort {
+    padding: 5px;
+    list-style: none;
+}
+
+.filter-text {
+    display: inline-block;
+    padding: 3px 3px;
+    width: 60px;
+}
+
+.filter-list .active {
     display: block !important;
     background: white;
-    padding: 0 5px 5px;
     border: 1px solid;
-    margin-left: -22px;
-    width: 99px;
+    margin-left: -4px;
+    width: 86px;
+    margin-top: 3px;
 }
 
-.fitter-list {
+.filter-list {
     display: inline-block;
     border: 1px solid;
-    padding: 5px 21px;
+    padding: 3px 3px;
+    width: 86px;
 }
 
-.fitter-list .fitter-sign {
+.filter-list .filter-sign {
     background: url(/pub/media/images/icon/down.png) no-repeat center;
     display: inline-block;
     width: 20px;
-    height: 10px;
+    height: 20px;
+    float: right;
+}
+
+.filter-list .open {
+    background: url(/pub/media/images/icon/up.png) no-repeat center !important;
 }
 
 #narrow-by-list .swatch-attribute, #narrow-by-list .items {
@@ -1248,11 +1261,29 @@ a {
     margin-bottom: 0 !important;
 }
 
+.filter-submit {
+    width: 100%;
+    background: #E2E2E2;
+}
+
+.swatch-attribute-options {
+    padding: 5px;
+}
+
+.box-price {
+    list-style: none;
+    padding: 5px;
+}
+
+.catalog-category-view .products {
+    margin: 20px 0;
+}
+
 /* # test fitter list*/
 
 /*  test price list*/
 
-#narrow-by-list #fitter-price:nth-child(1) {
+#narrow-by-list > .filter-list:nth-child(3) {
     display: none;
 }
 
@@ -1305,6 +1336,7 @@ a {
 
     #layered-filter-block {
         border: 1px solid;
+        margin-bottom: 20px;
     }
 
     #layered-filter-block .title-sidaber {
@@ -1330,6 +1362,48 @@ a {
 
     #layered-filter-block > .open {
         background: url(/pub/media/images/icon/tru.png) no-repeat center !important;
+    }
+
+    .filter-text {
+        display: none;
+    }
+
+    .filter-list .active {
+        display: block !important;
+        background: white;
+        border: 1px solid;
+        margin-left: -4px;
+        width: 30%;
+        margin-top: 3px;
+    }
+
+    .filter-list {
+        display: inline-block;
+        border: 1px solid;
+        padding: 3px 3px;
+        width: 30%;
+    }
+
+    .catalog-category-view .swatch-attribute {
+        width: 30%;
+    }
+
+    .catalog-category-view .swatch-attribute .filter-list {
+        width: 100%;
+    }
+
+    .catalog-category-view .main > .filter {
+        width: 100%;
+    }
+
+    .toolbar-products {
+        float: left;
+        padding: 10px 0 0 0;
+        width: 100%;
+    }
+
+    .toolbar-products .pages {
+        float: left !important;
     }
 
 }
