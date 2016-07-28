@@ -1,0 +1,41 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of \Magento\Framework\App\ObjectManager
+$logo = $_objectManager->get('Magento\Theme\Block\Html\Header\Logo');
+
+
+$group = $block->getGroupName();
+$groupCss = $block->getGroupCss();
+$groupBehavior = $block->getGroupBehaviour() ? $block->getGroupBehaviour() : '{"tabs":{"openedState":"active"}}';
+?>
+<?php if ($detailedInfoGroup = $block->getGroupChildNames($group, 'getChildHtml')):?>
+    <div class="sections <?= $groupCss ?>">
+
+        <div class="topLogo"><img src="<?= $logo->getLogoSrc() ?>" /></div>
+        <?php $layout = $block->getLayout(); ?>
+        <div class="section-items <?= $groupCss ?>-items" data-mage-init='<?= $groupBehavior ?>'>
+            <?php foreach ($detailedInfoGroup as $name):?>
+                <?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html) && ($block->getUseForce() != true)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                ?>
+                <div class="section-item-title <?= $groupCss ?>-item-title" data-role="collapsible">
+                    <a class="<?= $groupCss ?>-item-switch" data-toggle="switch" href="#<?= $alias; ?>"><?= $label; ?></a>
+                </div>
+                <div class="section-item-content <?= $groupCss ?>-item-content" id="<?= $alias; ?>" data-role="content"><?= $html; ?></div>
+            <?php endforeach;?>
+        </div>
+    </div>
+<?php endif; ?>
