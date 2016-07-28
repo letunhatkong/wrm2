@@ -1243,3 +1243,45 @@ p.headHome {
 }
 
 /* # Home Page */
+
+/* Press */
+th.th_product {
+    width: 25%;
+   border-color: gray;
+    margin-bottom: 40px;
+}
+
+img.img-full {
+    padding: 15px;
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+img.img-full:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+#hr_title {
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid gray;
+    text-align: center;
+}
+
+#span_title {
+    font-size: 20px;
+    background-color: white;
+    padding: 0 10px;
+    color: gray;
+}
+
+ul {
+    display: inline;
+}
+
+#press_h2 {
+    margin-bottom: 0.5rem;
+}
+
+/* # Press */
