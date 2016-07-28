@@ -1062,13 +1062,39 @@ a {
 }
 
 .fitter-list .fitter-sign {
-    background: url(/pub/media/images/icon/add.png) no-repeat center;
+    background: url(/pub/media/images/icon/down.png) no-repeat center;
     display: inline-block;
     width: 20px;
     height: 10px;
 }
 
+#narrow-by-list .swatch-attribute, #narrow-by-list .items {
+    display: inline-block;
+}
+
+#narrow-by-list .size {
+    display: none;
+}
+
+.toolbar-products {
+    display: inline-block;
+    float: right;
+}
+
+.main > .block {
+    display: inline-block;
+    margin-bottom: 0 !important;
+}
+
 /* # test fitter list*/
+
+/*  test price list*/
+
+#narrow-by-list #fitter-price:nth-child(1) {
+    display: none;
+}
+
+/* # test price list*/
 
 @media only screen and (max-width: 767px) {
     .catalog-category-view .breadcrumbs {
