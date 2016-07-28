@@ -14,13 +14,13 @@
  * @var $block \Magento\LayeredNavigation\Block\Navigation\FilterRenderer
  */
 ?>
-<div class="fitter-list" id="fitter-price">
+<div class="filter-list" id="filter-price">
         <label class="sel no-icon-mobile checkbox">
-            <a class="fitter-choose" href="javascript:void(0);"><span class="123">PRICE</span>
-                <span class="fitter-sign"></span></a>
+            <a class="filter-choose-price" href="javascript:void(0);"><span class="123">PRICE</span>
+                <span class="filter-sign"></span></a>
         </label><br>
-        <div class="fitter-box">
-
+        <div class="filter-box-price list-price">
+            <div class="box-price">
 
     <?php foreach ($filterItems as $filterItem): ?>
         <li class="item">
@@ -41,6 +41,8 @@
             <?php endif; ?>
         </li>
     <?php endforeach ?>
-
+            </div>
+            <input type="submit" value="APPLY" class="filter-submit">
         </div>
+
 </div>
