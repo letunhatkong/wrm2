@@ -1,0 +1,98 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Swatches\Block\LayeredNavigation\RenderLayered */
+?>
+<?php
+$urlInterface = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\UrlInterface');
+$curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
+?>
+
+<?php $swatchData = $block->getSwatchData(); ?>
+<div class="swatch-attribute swatch-layered <?= $swatchData['attribute_code'] ?>"
+     attribute-code="<?= $swatchData['attribute_code'] ?>" attribute-id="174">
+
+    <div class="fitter-list">
+        <form action="<?= $curUrl . '' ?>" method="get">
+            <label class="sel no-icon-mobile checkbox">
+                <a class="fitter-choose" href="javascript:void(0);"><span class="123"><?= $swatchData['attribute_code'] ?></span>
+                    <span class="fitter-sign"></span></a>
+            </label><br>
+            <div class="fitter-box">
+
+
+
+    <div class="swatch-attribute-options clearfix">
+        <?php foreach ($swatchData['options'] as $option => $label): ?>
+            <a href="<?= $label['link'] ?>" class="swatch-option-link-layered">
+                <?php if (isset($swatchData['swatches'][$option]['type'])) { ?>
+                    <?php switch ($swatchData['swatches'][$option]['type']) {
+                        case '3':
+                            ?>
+                            <div class="swatch-option <?= $label['custom_style'] ?>"
+                                 option-type="3"
+                                 option-id="<?= $option ?>"
+                                 option-label="<?= $label['label'] ?>"
+                                 option-tooltip-thumb="1"
+                                 option-tooltip-value=""
+                            ></div>
+                            <?php    break;
+                        case '2':
+                            ?>
+                            <?php $swatchThumbPath = $block->getSwatchPath('swatch_thumb',
+                            $swatchData['swatches'][$option]['value']); ?>
+                            <?php $swatchImagePath = $block->getSwatchPath('swatch_image',
+                            $swatchData['swatches'][$option]['value']); ?>
+                            <div class="swatch-option image <?= $label['custom_style'] ?>"
+                                 option-type="2"
+                                 option-id="<?= $option ?>"
+                                 option-label="<?= $label['label'] ?>"
+                                 option-tooltip-thumb="<?= $swatchThumbPath ?>"
+                                 option-tooltip-value=""
+                                 style="background: url(<?= $swatchImagePath ?>) no-repeat center; background-size: initial;"></div>
+                            <?php    break;
+                        case '1':
+                            ?>
+                            <div class="swatch-option color <?= $label['custom_style'] ?>"
+                                 option-type="1"
+                                 option-id="<?= $option ?>"
+                                 option-label="<?= $label['label'] ?>"
+                                 option-tooltip-thumb=""
+                                 option-tooltip-value="<?= $swatchData['swatches'][$option]['value'] ?>"
+                                 style="background: <?= $swatchData['swatches'][$option]['value'] ?> no-repeat center; background-size: initial;"></div>
+                            <?php    break;
+                        case '0':
+                        default:
+                            ?>
+                            <label class="sel no-icon-mobile checkbox">
+                            <input id="check_0" type="checkbox" name="<?= $swatchData['attribute_code'] ?>" value="<?= $option ?>">
+                            <span class="<?= $label['label'] ?>"><?= $label['label'] ?></span>
+                            </label><br>
+
+                            <?php    break;
+                    } ?>
+                <?php } ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+                <input type="submit" value="APPLY">
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+<script>
+    require(["jquery", "jquery/ui", "swatchRenderer"], function ($) {
+        $('.swatch-layered.<?= $swatchData['attribute_code'] ?>')
+            .find('[option-type="1"], [option-type="2"], [option-type="0"], [option-type="3"]')
+            .SwatchRendererTooltip();
+    });
+</script>

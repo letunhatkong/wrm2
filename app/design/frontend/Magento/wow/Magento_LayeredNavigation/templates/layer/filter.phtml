@@ -1,0 +1,46 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Template for filter items block
+ *
+ * @var $block \Magento\LayeredNavigation\Block\Navigation\FilterRenderer
+ */
+?>
+<div class="fitter-list" id="fitter-price">
+        <label class="sel no-icon-mobile checkbox">
+            <a class="fitter-choose" href="javascript:void(0);"><span class="123">PRICE</span>
+                <span class="fitter-sign"></span></a>
+        </label><br>
+        <div class="fitter-box">
+
+
+    <?php foreach ($filterItems as $filterItem): ?>
+        <li class="item">
+            <?php if ($filterItem->getCount() > 0): ?>
+                <a href="<?php echo $block->escapeUrl($filterItem->getUrl()) ?>">
+                    <?= $filterItem->getLabel() ?>
+                    <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                        <span class="count"><?= $filterItem->getCount()?><span class="filter-count-label">
+                            <?php if ($filterItem->getCount() == 1):?> <?= __('item')?><?php else:?><?php endif;?></span></span>
+                    <?php endif; ?>
+                </a>
+            <?php else:?>
+                <?= $filterItem->getLabel() ?>
+                <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                    <span class="count"><?= $filterItem->getCount()?><span class="filter-count-label">
+                        <?php if ($filterItem->getCount() == 1):?><?= __('item')?><?php else:?><?= __('items') ?><?php endif;?></span></span>
+                <?php endif; ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+
+        </div>
+</div>
