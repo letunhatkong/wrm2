@@ -10,15 +10,6 @@
         <referenceContainer name="header.container">
             <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-"/>
         </referenceContainer>
-        <move element="header.panel" destination="header.panel.wrapper"/>
-        <!--<move element="top.links" destination="header.panel" after="-"/>-->
-        <!--<move element="catalog.topnav" destination="store.menu" before="-"/>-->
-        <!-- Move Menu -->
-        <move element="top.links" destination="header-wrapper" before="top.search"/>
-        <move element="catalog.topnav" destination="header-wrapper" after="top.search"/>
-        <!--<move element="top.search" destination="store.menu" after="catalog.topnav" />-->
-        <!-- Move toplinks -->
-        
         
         <referenceContainer name="page.top">
             <block class="Magento\Framework\View\Element\Template" name="navigation.sections" before="-" template="Magento_Theme::html/sections.phtml">
@@ -56,6 +47,17 @@
             </block>
         </referenceContainer>
 
+        <!-- Header -->
+        <referenceBlock name="catalog.compare.link" remove="true" />
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="authorization-link" remove="true" />
+
+        <move element="header.panel" destination="header.panel.wrapper"/>
+        <move element="top.links" destination="header.panel" after="-"/>
+        <move element="catalog.topnav" destination="store.menu" before="-"/>
+        <move element="minicart" destination="top.links" after="-"/>
+        <move element="top.search" destination="top.links" before="minicart"/>
+        <!-- # Header -->
 
         <!-- Banner home -->
         <block class="Magento\Framework\View\Element\Template" name="top.slider.home" template="Magento_Theme::html/top-slider-home.phtml"/>
@@ -67,22 +69,14 @@
         <block class="Magento\Framework\View\Element\Template" name="return_form" template="Magento_Theme::html/returnform.phtml" />
         <!--LookBook -->
         <block class="Magento\Framework\View\Element\Template" name="lookbook" template="Magento_Theme::html/lookbook.phtml" />
+
         <!-- footer -->
         <referenceBlock name="store_switcher" remove="true" />
         <referenceBlock name="footer_links" remove="true" />
         <referenceBlock name="copyright" remove="true" />
         <referenceBlock name="report.bugs" remove="true" />
         <referenceContainer name="footer" label="Footer"  htmlClass="container-fluid" />
-        <!-- Header -->
-        <referenceContainer name="header.panel" htmlTag="div" htmlClass="panel header col-1200" />
-        <!-- Move minicart -->
-        <move element="minicart" destination="top.links" after="-"/>
-        <!-- Remove link on Top Links -->
-        <referenceBlock name="catalog.compare.link" remove="true" />
-        <referenceBlock name="register-link" remove="true" />
-        <referenceBlock name="wish-list-link" remove="true" />
-        <referenceBlock name="my-account-link" remove="true" />
-        <referenceBlock name="top.search" remove="true" />
+        <!-- # Footer -->
 
         <!-- JS -->
         <block class="Magento\Framework\View\Element\Text" name="carousel">
