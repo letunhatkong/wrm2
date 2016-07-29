@@ -37,36 +37,38 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
             <dl class="filter-options" id="narrow-by-list">
 
                 <div class="filter-list move-sort" id="filter-price">
-                    <label class="sel no-icon-mobile checkbox">
-                        <a class="filter-choose-sort" href="javascript:void(0);"><span class="123">SORT BY</span>
-                            <span class="filter-sign"></span></a>
-                    </label><br>
-                    <div class="filter-box-sort">
+
+                    <a class="filter-choose" href="javascript:void(0);"><span class="123">SORT BY</span>
+                        <span class="filter-sign"></span></a>
+
+                    <div class="filter-box">
                         <li class="item">
-                            <a href="<?= $curUrl .'?product_list_order=price'?>"><span class="price">Price:Low to Hight</span></a>
+                            <a href="<?= $curUrl . '?product_list_order=price' ?>"><span class="price">Price:Low to Hight</span></a>
                         </li>
                         <li class="item">
-                            <a href="<?= $curUrl .'?product_list_order=price&product_list_dir=desc'?>"><span class="price">Price:Hight to Low</span></a>
+                            <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=desc' ?>"><span
+                                    class="price">Price:Hight to Low</span></a>
                         </li>
                         <li class="item">
-                            <a href="<?= $curUrl .'?product_list_dir=asc'?>"><span class="price">A to Z</span></a>
+                            <a href="<?= $curUrl . '?product_list_dir=asc' ?>"><span class="price">A to Z</span></a>
                         </li>
                         <li class="item">
-                            <a href="<?= $curUrl .'?product_list_order=name&product_list_dir=desc'?>"><span class="price">Z to A</span></a>
+                            <a href="<?= $curUrl . '?product_list_order=name&product_list_dir=desc' ?>"><span
+                                    class="price">Z to A</span></a>
                         </li>
                         <li class="item">
-                            <a href="<?= $curUrl .'?product_list_dir=asc'?>"><span class="price">Newest to Oldest</span></a>
+                            <a href="<?= $curUrl . '?product_list_dir=asc' ?>"><span
+                                    class="price">Newest to Oldest</span></a>
                         </li>
                         <li class="item">
-                            <a href="<?= $curUrl .'?product_list_dir=asc'?>"><span class="price">Oldest to Newest</span></a>
+                            <a href="<?= $curUrl . '?product_list_dir=asc' ?>"><span
+                                    class="price">Oldest to Newest</span></a>
                         </li>
                     </div>
                 </div>
                 <div class="filter-text">
                     <span>FILTER BY</span>
                 </div>
-
-
 
 
                 <?php $wrapOptions = true;
@@ -84,43 +86,17 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
     <script type="text/javascript">
         require(['jquery', 'jquery/ui'], function ($) {
             $(document).ready(function ($) {
-//    dropdown color
-                $('.filter-list .filter-choose-color').click(function () {
-                    var isOpen = $('.filter-list .filter-sign').hasClass("open");
+
+                $('.filter-choose').click(function () {
+                    var isOpen = $(this).hasClass("open");
                     if (isOpen) {
-                        $('.filter-choose-color .filter-sign').removeClass("open");
-                        $('.filter-list .filter-box-color').removeClass("active");
+                        $(this).removeClass("open");
                     } else {
-                        $('.filter-choose-color .filter-sign').removeClass('open');
-                        $('.filter-choose-color .filter-sign').addClass("open");
-                        $('.filter-list .filter-box-color').addClass("active");
-                    }
-                });
-//    dropdown price
-                $('.filter-list .filter-choose-price').click(function () {
-                    var isOpen = $('.filter-list .filter-sign').hasClass("open");
-                    if (isOpen) {
-                        $('.filter-choose-price .filter-sign').removeClass("open");
-                        $('.filter-list .filter-box-price').removeClass("active");
-                    } else {
-                        $('.filter-choose-price .filter-sign').removeClass('open');
-                        $('.filter-choose-price .filter-sign').addClass("open");
-                        $('.filter-list .filter-box-price').addClass("active");
+                        $('.filter-options .open').removeClass('open');
+                        $(this).addClass("open");
                     }
                 });
 
-//    dropdown sort
-                $('.filter-list .filter-choose-sort').click(function () {
-                    var isOpen = $('.filter-list .filter-sign').hasClass("open");
-                    if (isOpen) {
-                        $('.filter-choose-sort .filter-sign').removeClass("open");
-                        $('.filter-list .filter-box-sort').removeClass("active");
-                    } else {
-                        $('.filter-choose-sort .filter-sign').removeClass('open');
-                        $('.filter-choose-sort .filter-sign').addClass("open");
-                        $('.filter-list .filter-box-sort').addClass("active");
-                    }
-                });
             });
         });
     </script>

@@ -15,34 +15,34 @@
  */
 ?>
 <div class="filter-list" id="filter-price">
-        <label class="sel no-icon-mobile checkbox">
-            <a class="filter-choose-price" href="javascript:void(0);"><span class="123">PRICE</span>
-                <span class="filter-sign"></span></a>
-        </label><br>
-        <div class="filter-box-price list-price">
-            <div class="box-price">
 
-    <?php foreach ($filterItems as $filterItem): ?>
-        <li class="item">
-            <?php if ($filterItem->getCount() > 0): ?>
-                <a href="<?php echo $block->escapeUrl($filterItem->getUrl()) ?>">
-                    <?= $filterItem->getLabel() ?>
-                    <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
-                        <span class="count"><?= $filterItem->getCount()?><span class="filter-count-label">
-                            <?php if ($filterItem->getCount() == 1):?> <?= __('item')?><?php else:?><?php endif;?></span></span>
+    <a class="filter-choose" href="javascript:void(0);"><span class="123">PRICE</span>
+        <span class="filter-sign"></span></a>
+
+    <div class="filter-box list-price">
+        <div class="box-price">
+
+            <?php foreach ($filterItems as $filterItem): ?>
+                <li class="item">
+                    <?php if ($filterItem->getCount() > 0): ?>
+                        <a href="<?php echo $block->escapeUrl($filterItem->getUrl()) ?>">
+                            <?= $filterItem->getLabel() ?>
+                            <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                                <span class="count"><?= $filterItem->getCount() ?><span class="filter-count-label">
+                            <?php if ($filterItem->getCount() == 1): ?> <?= __('item') ?><?php else: ?><?php endif; ?></span></span>
+                            <?php endif; ?>
+                        </a>
+                    <?php else: ?>
+                        <?= $filterItem->getLabel() ?>
+                        <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                            <span class="count"><?= $filterItem->getCount() ?><span class="filter-count-label">
+                        <?php if ($filterItem->getCount() == 1): ?><?= __('item') ?><?php else: ?><?= __('items') ?><?php endif; ?></span></span>
+                        <?php endif; ?>
                     <?php endif; ?>
-                </a>
-            <?php else:?>
-                <?= $filterItem->getLabel() ?>
-                <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
-                    <span class="count"><?= $filterItem->getCount()?><span class="filter-count-label">
-                        <?php if ($filterItem->getCount() == 1):?><?= __('item')?><?php else:?><?= __('items') ?><?php endif;?></span></span>
-                <?php endif; ?>
-            <?php endif; ?>
-        </li>
-    <?php endforeach ?>
-            </div>
-            <input type="submit" value="APPLY" class="filter-submit">
+                </li>
+            <?php endforeach ?>
         </div>
+        <input type="submit" value="APPLY" class="filter-submit">
+    </div>
 
 </div>

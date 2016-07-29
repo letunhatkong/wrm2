@@ -20,11 +20,11 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
 
     <div class="filter-list">
         <form action="<?= $curUrl . '' ?>" method="get">
-            <label class="sel no-icon-mobile checkbox">
-                <a class="filter-choose-<?= $swatchData['attribute_code'] ?>" href="javascript:void(0);"><span class="123"><?= $swatchData['attribute_code'] ?></span>
+
+                <a class="filter-choose" href="javascript:void(0);"><span class="123"><?= $swatchData['attribute_code'] ?></span>
                     <span class="filter-sign"></span></a>
-            </label><br>
-            <div class="filter-box-<?= $swatchData['attribute_code'] ?>">
+
+            <div class="filter-box">
 
 
     <div class="swatch-attribute-options clearfix">

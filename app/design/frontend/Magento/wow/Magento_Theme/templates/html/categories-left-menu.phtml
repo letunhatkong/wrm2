@@ -52,8 +52,10 @@ foreach ($categoryy as $cate) {
                 $hasSub = (is_array($key["subCategories"]) && count($key["subCategories"]) > 0) ? true : false;
                 ?>
                 <li class='has-sub'>
-<!--                    <a href="--><?php //echo ($hasSub) ? 'javascript:void(0);' : $key["url"] ?><!--" title="--><?//= $key['name'] ?><!--">-->
-                    <a href="<?php echo  $key["url"]; ?>" title="<?= $key['name'] ?>">
+                    <!--                    <a href="-->
+                    <?php //echo ($hasSub) ? 'javascript:void(0);' : $key["url"] ?><!--" title="-->
+                    <? //= $key['name'] ?><!--">-->
+                    <a href="<?php echo $key["url"]; ?>" title="<?= $key['name'] ?>">
                     <span>
                         <?php
                         echo $key['name'];
@@ -96,7 +98,7 @@ foreach ($categoryy as $cate) {
                 }
             });
 
-            $('#layered-filter-block > .sign').click(function (){
+            $('#layered-filter-block > .sign').click(function () {
                 var isOpen = $(this).hasClass("open");
                 if (isOpen) {
                     $(this).removeClass("open");
