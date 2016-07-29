@@ -5,8 +5,9 @@
 /* # CSS of JAY */
 
 @font-face {
-    font-family: 'ProximaNovaCond-Regular';
-    src: url('font/ProximaNovaCond-Regular.eot?#iefix') format('embedded-opentype'), url('font/ProximaNovaCond-Regular.woff') format('woff'), url('font/ProximaNovaCond-Regular.ttf') format('truetype'), url('font/ProximaNovaCond-Regular.svg#ProximaNovaCond-Regular') format('svg');
+    font-family: 'ProximaNova-Regular';
+    src: url('font/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), url('font/ProximaNova-Regular.otf') format('opentype'),
+    url('font/ProximaNova-Regular.woff') format('woff'), url('font/ProximaNova-Regular.ttf') format('truetype'), url('font/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -14,16 +15,47 @@
 body {
     color: #000;
     font-size: 14px;
-    font-family: "ProximaNovaCond-Regular", Arial, sans-serif;
+    font-family: "ProximaNova-Regular", Arial, sans-serif;
     overflow-x: hidden;
 }
 
 .abs-action-addto-product, .block-event .slider-panel .slider .item .action.event, .bundle-options-container .block-bundle-summary .product-addto-links > .action, .product-info-main .action.tocompare, .product-options-bottom .action.tocompare, .product-info-main .action.towishlist, .product-options-bottom .action.towishlist, .block-bundle-summary .action.towishlist, select {
-    font-family: "ProximaNovaCond-Regular", Arial, sans-serif;
+    font-family: "ProximaNova-Regular", Arial, sans-serif;
 }
 
 .product-item-info .product-item-inner {
     display: none;
+}
+
+.bundle-actions .action.primary, .bundle-options-container .block-bundle-summary .box-tocart .action.primary, .product-info-main .box-tocart .action.tocart, .product-options-bottom .box-tocart .action.tocart, .cart-container .checkout-methods-items .action.primary, .block-minicart .block-content > .actions > .primary .action.primary, .methods-shipping .actions-toolbar .action.primary, .block-authentication .action.action-register, .block-authentication .action.action-login, .checkout-payment-method .payment-method-content > .actions-toolbar > .primary .action.primary, .form-address-edit .actions-toolbar .action.primary, .multicheckout .action.primary {
+    line-height: normal;
+    padding: 10px 0;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.action.primary {
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "ProximaNova-Regular", Arial, sans-serif;
+    font-weight: 400;
+    padding: 7px 15px;
+    border: 1px solid #000;
+    vertical-align: middle;
+    outline: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.action.primary:hover {
+    background: #000;
+    color: #fff;
 }
 
 /* image responsive */
@@ -455,46 +487,6 @@ body {
 
 /* Footer */
 
-.action.primary {
-    background: #fff none;
-
-    color: black;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    padding: 7px 15px;
-    font-size: 14px;
-    vertical-align: middle;
-    outline: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.action.primary:hover {
-    background: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    padding: 7px 15px;
-    font-size: 14px;
-    vertical-align: middle;
-    outline: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 #newsletter {
     background: transparent;
     border: none;
@@ -529,11 +521,6 @@ body {
 
 .page-footer {
     border-top: 1px solid #000000;
-}
-
-.action.primary {
-    border: 2px solid #000000;
-
 }
 
 .block.newsletter .field .control:before {
