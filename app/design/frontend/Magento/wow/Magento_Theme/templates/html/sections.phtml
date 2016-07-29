@@ -8,7 +8,9 @@
 
 ?>
 <?php
-$_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of \Magento\Framework\App\ObjectManager
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$baseUrl = $storeManager->getStore()->getBaseUrl();
 $logo = $_objectManager->get('Magento\Theme\Block\Html\Header\Logo');
 
 
@@ -19,7 +21,7 @@ $groupBehavior = $block->getGroupBehaviour() ? $block->getGroupBehaviour() : '{"
 <?php if ($detailedInfoGroup = $block->getGroupChildNames($group, 'getChildHtml')):?>
     <div class="sections <?= $groupCss ?>">
 
-        <div class="topLogo"><img src="<?= $logo->getLogoSrc() ?>" /></div>
+        <div class="topLogo hidden-xs"><a href="<?= $baseUrl ?>" ><img src="<?= $logo->getLogoSrc() ?>" /></a></div>
         <?php $layout = $block->getLayout(); ?>
         <div class="section-items <?= $groupCss ?>-items" data-mage-init='<?= $groupBehavior ?>'>
             <?php foreach ($detailedInfoGroup as $name):?>
@@ -32,7 +34,7 @@ $groupBehavior = $block->getGroupBehaviour() ? $block->getGroupBehaviour() : '{"
                     $label = $block->getChildData($alias, 'title');
                 ?>
                 <div class="section-item-title <?= $groupCss ?>-item-title" data-role="collapsible">
-                    <a class="<?= $groupCss ?>-item-switch" data-toggle="switch" href="#<?= $alias; ?>"><?= $label; ?></a>
+                    <a class="<?= $groupCss ?>-item-switch" data-toggle="switch" href="#<?= $alias; ?>"><?= ($label == "Menu") ? "SHOP" :$label; ?></a>
                 </div>
                 <div class="section-item-content <?= $groupCss ?>-item-content" id="<?= $alias; ?>" data-role="content"><?= $html; ?></div>
             <?php endforeach;?>

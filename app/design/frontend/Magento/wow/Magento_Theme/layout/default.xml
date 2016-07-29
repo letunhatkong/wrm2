@@ -55,8 +55,8 @@
         <move element="header.panel" destination="header.panel.wrapper"/>
         <move element="top.links" destination="header.panel" after="-"/>
         <move element="catalog.topnav" destination="store.menu" before="-"/>
-        <move element="minicart" destination="top.links" after="-"/>
-        <move element="top.search" destination="top.links" before="minicart"/>
+        <move element="top.search" destination="top.links" after="-" />
+        <move element="minicart" destination="top.links" before="top.search"/>
         <!-- # Header -->
 
         <!-- Banner home -->
