@@ -1184,16 +1184,19 @@ a {
 }
 
 /*test fitter list*/
-.filter-box-color, .filter-box-price, .filter-box-sort {
+.filter-box {
     display: none;
     z-index: 2;
     position: absolute;
     background: white;
 }
 
-.filter-box-sort {
-    padding: 5px;
+.filter-box {
     list-style: none;
+}
+
+.move-sort .filter-box {
+    padding: 5px;
 }
 
 .filter-text {
@@ -1202,7 +1205,7 @@ a {
     width: 60px;
 }
 
-.filter-list .active {
+.open + .filter-box {
     display: block !important;
     background: white;
     border: 1px solid;
@@ -1226,7 +1229,7 @@ a {
     float: right;
 }
 
-.filter-list .open {
+.open .filter-sign {
     background: url(/pub/media/images/icon/up.png) no-repeat center !important;
 }
 
@@ -1264,6 +1267,10 @@ a {
 
 .catalog-category-view .products {
     margin: 20px 0;
+}
+
+.filter-choose span {
+    text-transform: uppercase;
 }
 
 /* # test fitter list*/
@@ -1355,7 +1362,7 @@ a {
         display: none;
     }
 
-    .filter-list .active {
+    .open + .filter-box{
         display: block !important;
         background: white;
         border: 1px solid;
