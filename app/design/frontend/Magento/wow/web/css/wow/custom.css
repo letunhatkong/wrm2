@@ -191,6 +191,10 @@ body {
     font-size: 12px;
 }
 
+#topMenuBar > ul {
+    padding: 0;
+}
+
 /* ---- search */
 .page-header .panel.header {
     padding: 0;
@@ -279,6 +283,7 @@ body {
 }
 
 /* ---- # search */
+
 /* Mini cart */
 #mini-cart {
     margin: 0;
@@ -644,16 +649,17 @@ body {
         margin: 0;
         border: 0;
         padding: 0 0 20px 20px;
-        width: 930px;
+        width: 100%;
     }
 
     .topLogo {
         float: left;
-        line-height: 46px;
+        margin: 15px 0 0;
     }
 
     .nav-sections-items {
         float: left;
+        margin: 20px 0 0;
     }
 
     .page-header .panel.wrapper {
@@ -713,6 +719,7 @@ body {
     #topMenuBar .level0 > .level-top {
         line-height: 40px;
         position: relative;
+        padding: 0 5px;
     }
 
     #topMenuBar .level0 .submenu a {
@@ -734,14 +741,13 @@ body {
 
 @media only screen and (min-width: 768px) and (max-width: 1139px) {
     /*.page-header {*/
-        /*border: none;*/
-        /*margin: 0;*/
+    /*border: none;*/
+    /*margin: 0;*/
     /*}*/
-
     /*.nav-sections-items {*/
-        /*float: left;*/
-        /*clear: both;*/
-        /*margin-left: -17px;*/
+    /*float: left;*/
+    /*clear: both;*/
+    /*margin-left: -17px;*/
     /*}*/
 }
 
