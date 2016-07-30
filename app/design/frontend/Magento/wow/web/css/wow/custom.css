@@ -936,6 +936,10 @@ body {
     margin: 0 0 10px;
 }
 
+.product-add-form .fieldset > .field > .label {
+    font-weight: normal;
+}
+
 .catalog-product-view .swatch-option-tooltip {
     display: none !important;
 }
@@ -1122,6 +1126,10 @@ body {
 /* ---- Main Detail */
 
 /* ---- Related slider */
+.padHS {
+    padding: 0 40px;
+}
+
 .otherSliderWrapper {
     width: 100%;
     clear: both;
@@ -1231,14 +1239,22 @@ body {
 /*height: auto !important;*/
 /*}*/
 
+.fotorama__thumb-border {
+    border: 1px solid #c2c2c2 !important;
+}
+
 /* Thumb */
 
 /* main image */
+.fotorama__stage__frame .fotorama__img {
+    border: 1px solid #c2c2c2 !important;
+}
+
 @media only screen and (min-width: 768px) {
     .fotorama__wrap .fotorama__stage {
         float: right;
-        width: calc(100% - 100px) !important;
-        padding-bottom: calc(150% - 150px) !important;
+        width: calc(100% - 80px) !important;
+        padding-bottom: calc(150% - 120px) !important;
         left: auto !important;
         height: 0 !important;
         line-height: 1 !important;

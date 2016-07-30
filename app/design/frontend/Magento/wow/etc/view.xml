@@ -85,11 +85,11 @@
                 <height>900</height>
             </image>
             <image id="product_page_image_small" type="thumbnail">
-                <width>80</width>
-                <height>120</height>
+                <width>65</width>
+                <height>98</height>
             </image>
             <image id="product_page_main_image" type="image">
-                <width>600</width>
+                <width>600</width>`
                 <height>900</height>
             </image>
             <image id="product_page_main_image_default" type="image">
