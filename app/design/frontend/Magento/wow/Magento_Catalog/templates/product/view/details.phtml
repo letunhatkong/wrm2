@@ -44,6 +44,8 @@ $return = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId
         $(document).ready(function($) {
             $('.clickPopUpDP').click(function(){
                 var id = $(this).attr("data-content");
+                $('.clickPopUpDP').removeClass("active");
+                $(this).addClass("active");
                 $('.popUpDetailPage .content').addClass("hidden");
                 $(id).removeClass("hidden");
                 $('.popUpDetailPage').addClass('open');

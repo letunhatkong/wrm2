@@ -6,40 +6,40 @@ $baseUrl = $currentStore->getBaseUrl();
 $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
 $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
 
-$banners = $_objectManager->get('Sahy\Banner\Block\Frontend\Banners');
-$collection = $banners->getHomeContentcollection(); 
+$sa = $_objectManager->get('Sahy\Banner\Block\Frontend\Banners');
+$banners = $sa->getAllBannerByType($sa::TYPE_HOME_BANNER);
 ?>
-<div id="bannerHS" class="carousel slide" data-ride="carousel" data-interval="false">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <?php $i = 1; ?>
-            <?php foreach($collection as $bn) { ?>
-                <div class="item <?= ($i == 1) ? 'active':'' ?>">
-                    <img src="<?= $mediaUrl . $bn['image']?>" />
-                </div>
-                <?php $i++; ?>
-            <?php } ?>
-        </div>
-        <!-- Controls -->
-        <a href="#bannerHS" role="button" data-slide="prev">
-            <div class="prevButtonWrap" aria-hidden="true">
-                <img src="<?= $mediaUrl ?>images/home/left-big.png"/>
-            </div>
-        </a>
-        <a href="#bannerHS" role="button" data-slide="next">
-            <div class="nextButtonWrap" aria-hidden="true">
-                <img src="<?= $mediaUrl ?>images/home/right-big.png"/>
-            </div>
-        </a>
 
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <?php $i =0 ?>
-            <?php foreach($collection as $bn) { ?>
-                <li data-target="#bannerHS" data-slide-to="<?= $i ?>" class="<?= ($i == 0) ? 'active':'' ?>"></li>
-                <?php $i++; ?>
-            <?php } ?>
-        </ol>
+<?php $size = count($banners); ?>
+<div id="bannerHS" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <?php $i = 1; ?>
+        <?php foreach ($banners as $bn) { ?>
+            <div class="item <?= ($i == 1) ? 'active' : '' ?>">
+                <img src="<?= $mediaUrl . $bn['image'] ?>"/>
+            </div>
+            <?php $i++; ?>
+        <?php } ?>
     </div>
- <script type="text/javascript" src="/pub/js/carousel.js"></script>
- <script type="text/javascript" src="/pub/js/owl.carousel.js"></script>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#bannerHS" role="button" data-slide="prev">
+        <div class="prevButtonWrap sliderIcon" aria-hidden="true">
+            <img src="<?= $mediaUrl ?>images/icon/pLeft.png"/>
+        </div>
+    </a>
+    <a class="right carousel-control" href="#bannerHS" role="button" data-slide="next">
+        <div class="nextButtonWrap sliderIcon" aria-hidden="true">
+            <img src="<?= $mediaUrl ?>images/icon/pRight.png"/>
+        </div>
+    </a>
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <?php $i = 0 ?>
+        <?php foreach ($banners as $bn) { ?>
+            <li data-target="#bannerHS" data-slide-to="<?= $i ?>" class="<?= ($i == 0) ? 'active' : '' ?>"></li>
+            <?php $i++; ?>
+        <?php } ?>
+    </ol>
+</div>
