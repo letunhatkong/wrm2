@@ -1,6 +1,6 @@
 <!--
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -9,14 +9,14 @@
         <!-- ko if: product_has_url -->
         <a data-bind="attr: {href: product_url, title: product_name}" tabindex="-1" class="product-item-photo">
             <!-- ko foreach: $parent.getRegion('itemImage') -->
-            <!-- ko template: {name: getTemplate(), data: item.product_image} --><!-- /ko -->
+                <!-- ko template: {name: getTemplate(), data: item.product_image} --><!-- /ko -->
             <!-- /ko -->
         </a>
         <!-- /ko -->
         <!-- ko ifnot: product_has_url -->
         <span class="product-item-photo">
             <!-- ko foreach: $parent.getRegion('itemImage') -->
-            <!-- ko template: {name: getTemplate(), data: item.product_image} --><!-- /ko -->
+                <!-- ko template: {name: getTemplate(), data: item.product_image} --><!-- /ko -->
             <!-- /ko -->
         </span>
         <!-- /ko -->
@@ -27,7 +27,7 @@
                 <a data-bind="attr: {href: product_url}, text: product_name"></a>
                 <!-- /ko -->
                 <!-- ko ifnot: product_has_url -->
-                <!-- ko text: product_name --><!-- /ko -->
+                    <!-- ko text: product_name --><!-- /ko -->
                 <!-- /ko -->
             </strong>
 
@@ -42,10 +42,10 @@
                         <dt class="label"><!-- ko text: option.label --><!-- /ko --></dt>
                         <dd class="values">
                             <!-- ko if: Array.isArray(option) -->
-                            <span data-bind="html: option.value.join('<br>')"></span>
+                                <span data-bind="html: option.value.join('<br>')"></span>
                             <!-- /ko -->
                             <!-- ko ifnot: Array.isArray(option) -->
-                            <span data-bind="html: option.value"></span>
+                                <span data-bind="html: option.value"></span>
                             <!-- /ko -->
                         </dd>
                         <!-- /ko -->
@@ -64,7 +64,7 @@
                 <!-- /ko -->
                 <!-- ko ifnot: canApplyMsrp -->
                 <!-- ko foreach: $parent.getRegion('priceSidebar') -->
-                <!-- ko template: {name: getTemplate(), data: item.product_price, as: 'price'} --><!-- /ko -->
+                    <!-- ko template: {name: getTemplate(), data: item.product_price, as: 'price'} --><!-- /ko -->
                 <!-- /ko -->
                 <!-- /ko -->
 
