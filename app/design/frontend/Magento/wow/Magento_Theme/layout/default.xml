@@ -52,7 +52,6 @@
         <move element="promo-code" destination="page.wrapper" before="-"/>
         <referenceBlock name="catalog.compare.link" remove="true" />
         <referenceBlock name="register-link" remove="true" />
-        <referenceBlock name="authorization-link" remove="true" />
 
         <move element="header.panel" destination="header.panel.wrapper"/>
         <move element="top.links" destination="header.panel" after="-"/>

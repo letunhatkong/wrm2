@@ -18,7 +18,7 @@ $_sub = $sa->getAllBannerByType($sa::TYPE_SUB_BANNER);
         <?php $i = 1; ?>
         <?php foreach($_sub as $item) { ?>
             <?php if ($i <= 2) { ?>
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-6 col-sm-6">
                     <a href="<?= $item['link'] ?>">
                         <img class="img-full" src="<?= $mediaUrl . $item['image'] ?>"/>
                     </a>
@@ -62,19 +62,19 @@ $_sub = $sa->getAllBannerByType($sa::TYPE_SUB_BANNER);
             <!-- Items -->
             <?php $i = 1; $max = count($result->data); ?>
             <?php foreach ($result->data as $post) { ?>
-                <?php if ($i % 6 == 1) { ?>
+                <?php if ($i % 8 == 1) { ?>
                     <div class="item <?= ($i == 1) ? ' active' : '' ?>">
                     <div class="row">
                 <?php } ?>
 
-                <div class="col-xs-6 col-sm-4 col-md-2" style="padding-bottom: 10px; padding-top: 10px">
+                <div class="col-xs-6 col-sm-3 col-md-1" style="padding-bottom: 10px; padding-top: 10px">
                     <a href="<?= $post->link ?>">
                         <div class="img-resp img100">
                             <img src="<?= $post->images->thumbnail->url ?>"/>
                         </div>
                     </a>
                 </div>
-                <?php if ($i % 6 == 0 || $i == $max ) { ?>
+                <?php if ($i % 8 == 0 || $i == $max ) { ?>
                     </div>
                     </div>
                 <?php } ?>
@@ -93,5 +93,8 @@ $_sub = $sa->getAllBannerByType($sa::TYPE_SUB_BANNER);
             </div>
         </a>
     </div>
+
+    <div class="clearfix pad40"></div>
+    <div class="clearfix pad40"></div>
 
 </div>
