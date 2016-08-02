@@ -195,7 +195,7 @@ body {
     padding: 0;
 }
 
-header.panel > .header.links > li.welcome {
+.header.panel > .header.links > li.welcome {
     display: none;
 }
 
@@ -1517,6 +1517,10 @@ a {
     color: #7b7b7b !important;
 }
 
+.catalog-category-view .product-item .minimal-price-link {
+    display: none;
+}
+
 /* fitter list */
 .filter-box {
     display: none;
@@ -1625,6 +1629,11 @@ dl#narrow-by-list > div {
 
 .filter-box.list-price .filter-submit {
     display: none;
+}
+
+.page-layout-2columns-left .sidebar-main {
+    width: 100%;
+    padding: 0;
 }
 
 @media only screen and (max-width: 767px) {
