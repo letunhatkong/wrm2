@@ -43,21 +43,21 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
 
                     <div class="filter-box sort-by">
                         <li class="item">
-                            <a href="<?= $curUrl . '?product_list_order=price' ?>"><span class="price">Price:Low to Hight</span></a>
+                            <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=asc' ?>"><span class="price">Price:Low to Hight</span></a>
                         </li>
                         <li class="item">
                             <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=desc' ?>"><span
                                     class="price">Price:Hight to Low</span></a>
                         </li>
                         <li class="item">
-                            <a href="<?= $curUrl . '?product_list_dir=asc' ?>"><span class="price">A to Z</span></a>
+                            <a href="<?= $curUrl . '?product_list_order=name&product_list_dir=asc' ?>"><span class="price">A to Z</span></a>
                         </li>
                         <li class="item">
                             <a href="<?= $curUrl . '?product_list_order=name&product_list_dir=desc' ?>"><span
                                     class="price">Z to A</span></a>
                         </li>
                         <li class="item">
-                            <a href="<?= $curUrl . '?product_list_dir=asc' ?>"><span
+                            <a href="<?= $curUrl . '?product_list_dir=desc' ?>"><span
                                     class="price">Newest to Oldest</span></a>
                         </li>
                         <li class="item">

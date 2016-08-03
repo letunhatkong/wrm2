@@ -188,7 +188,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 #topMenuBar > ul {
@@ -591,8 +591,7 @@ body {
         background: #fff;
     }
 
-    .nav-sections .header.links li.greet.welcome, .aGoToWS,
-    .nav-sections-items .minicart-wrapper,
+    .aGoToWS, .nav-sections-items .minicart-wrapper,
     .nav-sections-items #clickSearchIcon {
         display: none;
     }
@@ -753,7 +752,7 @@ body {
     #topMenuBar .level0 > .level-top {
         line-height: 40px;
         position: relative;
-        padding: 0 5px;
+        padding: 0 15px;
     }
 
     #topMenuBar .level0 .submenu a {
@@ -777,6 +776,10 @@ body {
     .logo img {
         max-width: 160px;
     }
+}
+
+.page-header li.welcome {
+    display: none !important;
 }
 
 /* # Header */
@@ -862,7 +865,6 @@ body {
 }
 
 .socialFooter img {
-    width: 40px;
 }
 
 .block.newsletter .action.subscribe {
@@ -1069,9 +1071,11 @@ body {
 }
 
 .catalog-product-view .swatch-attribute.color .swatch-option.text:hover,
-.catalog-product-view .swatch-attribute.size .swatch-option.text:hover {
+.catalog-product-view .swatch-attribute.size .swatch-option.text:hover,
+.catalog-product-view .swatch-attribute.color .swatch-option.text.selected,
+.catalog-product-view .swatch-attribute.size .swatch-option.text.selected {
     color: #fff;
-    background: #000;
+    background: #000 !important;
 }
 
 .catalog-product-view .swatch-attribute > span {
@@ -1587,7 +1591,7 @@ dl#narrow-by-list > div {
     float: right;
 }
 
-.main > .block {
+.catalog-category-view .main > .block {
     display: inline-block;
     margin-bottom: 0 !important;
 }
@@ -1924,6 +1928,35 @@ p.headHome {
 /* Dashboard */
 .block-collapsible-nav .item.current a, .block-collapsible-nav .item.current strong {
     border-color: transparent;
+}
+
+.customer-account-index .column.main .block {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin: 0 0 30px;
+}
+
+.customer-account-index .columns .sidebar {
+    width: 200px;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+.customer-account-index .columns .column.main {
+    width: calc(100% - 220px);
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.customer-account-index .columns .sidebar-additional {
+    display: none;
+}
+
+.account .page.messages {
+    margin: 0;
 }
 
 /* # Dashboard */
