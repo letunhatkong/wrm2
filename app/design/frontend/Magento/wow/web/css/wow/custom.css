@@ -1930,33 +1930,41 @@ p.headHome {
     border-color: transparent;
 }
 
-.customer-account-index .column.main .block {
+.account .column.main .block {
     width: 100%;
     float: left;
     clear: both;
     margin: 0 0 30px;
 }
 
-.customer-account-index .columns .sidebar {
+.account .columns .sidebar {
     width: 200px;
     padding: 0;
     margin: 0;
     float: left;
 }
 
-.customer-account-index .columns .column.main {
+.account .columns .column.main {
     width: calc(100% - 220px);
     float: right;
     margin: 0;
     padding: 0;
 }
 
-.customer-account-index .columns .sidebar-additional {
+.account .columns .sidebar-additional {
     display: none;
 }
 
 .account .page.messages {
     margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .block-collapsible-nav {
+        top: 0;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 /* # Dashboard */
