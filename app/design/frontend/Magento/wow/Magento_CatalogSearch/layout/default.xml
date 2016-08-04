@@ -22,7 +22,7 @@
             </block>
         </referenceBlock>
 
-        <move element="breadcrumbs" destination="sidebar.additional" before="-"/>
+        <move element="breadcrumbs" destination="sidebar.main" before="-"/>
         <move element="page.main.title" destination="main" before="-"/>
         <move element="main" destination="columns" after="sidebar.main" />
 
