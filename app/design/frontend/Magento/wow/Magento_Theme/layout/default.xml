@@ -76,6 +76,7 @@
         <!--Testing-->
         <block class="Magento\Framework\View\Element\Template" name="testing" template="Magento_Theme::html/test_file.phtml" />        
 
+        <referenceBlock name="sale.reorder.sidebar" remove="true" />
 
         <!-- footer -->
         <referenceBlock name="store_switcher" remove="true" />

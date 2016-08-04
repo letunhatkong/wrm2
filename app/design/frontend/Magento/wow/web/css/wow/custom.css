@@ -1,8 +1,3 @@
-/* CSS of JAY */
-/*@import "styles-m.css";*/
-/*@import "styles-l.css";*/
-/*@import "custom2.css";*/
-/* # CSS of JAY */
 
 @font-face {
     font-family: 'ProximaNova-Regular';
@@ -29,9 +24,15 @@ body {
 
 .bundle-actions .action.primary, .bundle-options-container .block-bundle-summary .box-tocart .action.primary, .product-info-main .box-tocart .action.tocart, .product-options-bottom .box-tocart .action.tocart, .cart-container .checkout-methods-items .action.primary, .block-minicart .block-content > .actions > .primary .action.primary, .methods-shipping .actions-toolbar .action.primary, .block-authentication .action.action-register, .block-authentication .action.action-login, .checkout-payment-method .payment-method-content > .actions-toolbar > .primary .action.primary, .form-address-edit .actions-toolbar .action.primary, .multicheckout .action.primary {
     line-height: normal;
-    padding: 10px 0;
+    padding: 10px;
     font-size: 18px;
     text-transform: uppercase;
+    background: #000;
+    color: #fff;
+    font-weight: normal;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
 }
 
 .action.primary {
@@ -150,6 +151,19 @@ body {
 
 .col-1025 {
     max-width: 100%;
+}
+
+.page-layout-2columns-left .sidebar-additional,
+.page-layout-2columns-left .sidebar-main {
+    width: 200px;
+    padding: 0;
+    margin: 0;
+}
+
+.page-layout-2columns-left .column.main {
+    width: calc(100% - 220px);
+    padding: 0;
+    margin: 0;
 }
 
 @media only screen and (max-width: 1044px) {
@@ -778,7 +792,7 @@ body {
     }
 }
 
-.page-header li.welcome {
+.page-header li.welcome, .nav-sections .header.links li.greet.welcome {
     display: none !important;
 }
 
@@ -1052,30 +1066,6 @@ body {
 
 .catalog-product-view .page-title-wrapper .page-title {
     font-size: 24px;
-}
-
-.catalog-product-view .swatch-attribute.color .swatch-option.text,
-.catalog-product-view .swatch-attribute.size .swatch-option.text {
-    color: #000;
-    font-size: 14px;
-    font-weight: normal;
-    height: 30px;
-    line-height: 30px;
-    min-width: 22px;
-    margin: 0 8px 8px 0;
-    padding: 0 5px;
-    display: block;
-    border: 1px solid #000;
-    background: #fff;
-    outline: 0;
-}
-
-.catalog-product-view .swatch-attribute.color .swatch-option.text:hover,
-.catalog-product-view .swatch-attribute.size .swatch-option.text:hover,
-.catalog-product-view .swatch-attribute.color .swatch-option.text.selected,
-.catalog-product-view .swatch-attribute.size .swatch-option.text.selected {
-    color: #fff;
-    background: #000 !important;
 }
 
 .catalog-product-view .swatch-attribute > span {
@@ -1525,6 +1515,41 @@ a {
     display: none;
 }
 
+.page-products .products-grid .product-items {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.page-products .products-grid .product-item {
+    width: 25%;
+    margin: 0;
+    padding: 10px;
+    float: left;
+
+}
+
+.page-products .products-grid .product-item:nth-child(4n+1) {
+    clear: both;
+}
+
+.page-products .product-item-info {
+    width: 100%;
+}
+
+.page-products .products-grid .product-image-container {
+    width: 100% !important;
+}
+
+.page-products .products-grid .product-image-photo {
+    width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+    .page-products .products-grid .product-item {
+        width: 50%;
+    }
+}
+
 /* fitter list */
 .filter-box {
     display: none;
@@ -1604,10 +1629,6 @@ dl#narrow-by-list > div {
     padding: 5px 0;
 }
 
-.swatch-attribute-options {
-    padding: 5px;
-}
-
 .box-price {
     list-style: none;
     padding: 5px;
@@ -1621,10 +1642,6 @@ dl#narrow-by-list > div {
     text-transform: uppercase;
     float: left;
     margin: 0 7px 0 0;
-}
-
-#narrow-by-list > .filter-list:nth-child(3) {
-    display: none;
 }
 
 .catalog-category-view .filter-list a {

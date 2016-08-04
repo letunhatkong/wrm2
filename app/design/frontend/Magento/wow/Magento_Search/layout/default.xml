@@ -20,11 +20,10 @@
         </referenceBlock>
 
         <!-- Move breadcrumbs -->
-        <move element="breadcrumbs" before="-" destination="sidebar.additional" />
-        <!-- Move title -->
-        <move before="-" element="page.main.title" destination="main" />
+        <!--<move element="breadcrumbs" before="-" destination="sidebar.additional" />-->
+        <!--<move before="-" element="page.main.title" destination="main" />-->
         <!-- Move Filter -->
-        <move element="catalog.leftnav" destination="main" after="page.main.title"/>
+        <!--<move element="catalog.leftnav" destination="main" after="page.main.title"/>-->
 
     </body>
 </page>
