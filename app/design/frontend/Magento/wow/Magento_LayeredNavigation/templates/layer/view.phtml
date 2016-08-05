@@ -30,56 +30,57 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
 
             <?php endif; ?>
             <?php $wrapOptions = false; ?>
-            <?php foreach ($block->getFilters() as $filter): ?>
-        <?php if (!$wrapOptions): ?>
-            <strong role="heading" aria-level="2"
-                    class="block-subtitle filter-subtitle"><?= __('Shopping Options') ?></strong>
-            <dl class="filter-options" id="narrow-by-list">
+                <?php foreach ($block->getFilters() as $filter): ?>
+                    <?php if (!$wrapOptions): ?>
+                        <strong role="heading" aria-level="2"
+                                class="block-subtitle filter-subtitle"><?= __('Shopping Options') ?></strong>
+                        <dl class="filter-options" id="narrow-by-list">
 
-                <div class="filter-list move-sort" id="filter-price">
+                            <div class="filter-list move-sort" id="filter-price">
 
-                    <a class="filter-choose" href="javascript:void(0);"><span class="txt">SORT BY</span>
-                        <span class="filter-sign"></span></a>
+                                <a class="filter-choose" href="javascript:void(0);"><span class="txt">SORT BY</span>
+                                    <span class="filter-sign"></span></a>
 
-                    <div class="filter-box sort-by">
-                        <li class="item">
-                            <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=asc' ?>"><span class="price">Price:Low to Hight</span></a>
-                        </li>
-                        <li class="item">
-                            <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=desc' ?>"><span
-                                    class="price">Price:Hight to Low</span></a>
-                        </li>
-                        <li class="item">
-                            <a href="<?= $curUrl . '?product_list_order=name&product_list_dir=asc' ?>"><span class="price">A to Z</span></a>
-                        </li>
-                        <li class="item">
-                            <a href="<?= $curUrl . '?product_list_order=name&product_list_dir=desc' ?>"><span
-                                    class="price">Z to A</span></a>
-                        </li>
-                        <li class="item">
-                            <a href="<?= $curUrl . '?product_list_dir=desc' ?>"><span
-                                    class="price">Newest to Oldest</span></a>
-                        </li>
-                        <li class="item">
-                            <a href="<?= $curUrl . '?product_list_dir=asc' ?>"><span
-                                    class="price">Oldest to Newest</span></a>
-                        </li>
-                    </div>
-                </div>
-                <div class="filter-text">
-                    <span>FILTER BY</span>
-                </div>
+                                <div class="filter-box sort-by">
+                                    <li class="item">
+                                        <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=asc' ?>"><span class="price">Price:Low to Hight</span></a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=desc' ?>"><span
+                                                class="price">Price:Hight to Low</span></a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="<?= $curUrl . '?product_list_order=name&product_list_dir=asc' ?>"><span class="price">A to Z</span></a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="<?= $curUrl . '?product_list_order=name&product_list_dir=desc' ?>"><span
+                                                class="price">Z to A</span></a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="<?= $curUrl . '?product_list_dir=desc' ?>"><span
+                                                class="price">Newest to Oldest</span></a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="<?= $curUrl . '?product_list_dir=asc' ?>"><span
+                                                class="price">Oldest to Newest</span></a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="filter-text">
+                                <span>FILTER BY</span>
+                            </div>
 
 
-                <?php $wrapOptions = true;
-                endif; ?>
-                <?php if ($filter->getItemsCount()): ?>
-                    <?= $block->getChildBlock('renderer')->render($filter); ?>
-                <?php endif; ?>
+                            <?php $wrapOptions = true;
+                            endif; ?>
+                            <?php if ($filter->getItemsCount()): ?>
+                               <div class="<?php echo $block->escapeHtml(__($filter->getName())) ?>">
+                                <?= $block->getChildBlock('renderer')->render($filter); ?>
+                               </div>
+                        <?php endif; ?>
+                    </dl>
                 <?php endforeach; ?>
-                <?php if ($wrapOptions): ?>
-            </dl>
-        <?php endif; ?>
+
 
         </div>
     </div>
@@ -92,7 +93,7 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
                     if (isOpen) {
                         $(this).removeClass("open");
                     } else {
-                        $('.filter-options .open').removeClass('open');
+                        $('.filter-content .open').removeClass('open');
                         $(this).addClass("open");
                     }
                 });
