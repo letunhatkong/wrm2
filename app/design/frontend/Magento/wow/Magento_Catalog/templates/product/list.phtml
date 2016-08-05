@@ -16,7 +16,33 @@ use Magento\Framework\App\Action\Action;
  */
 ?>
 <?php
-$_productCollection = $block->getLoadedProductCollection();
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$date =  $_objectManager->create('\Magento\Framework\Stdlib\DateTime\DateTime');
+$today = $date->date();
+$oneMonth =  date('Y-m-d'. ' 00:00:00', strtotime($today. ' - 30 days'));
+ 
+$storeManager = $_objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$url = $storeManager->getStore()->getBaseUrl()."new-arrivals.html";
+$urlNow = $_objectManager->get('\Magento\Framework\UrlInterface')->getCurrentUrl();
+$urlCurrent = explode("?", $urlNow);
+$compareURL = strcmp($urlCurrent[0],$url);
+
+if (!$compareURL ) {
+$productCollection = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+$_productCollection = $productCollection->create()
+	->addAttributeToSelect('*')
+	->addFieldToFilter('type_id', 'configurable')
+    ->addFieldToFilter('news_from_date', array('date' => true, 'from' => $oneMonth, 'to'=>$today))
+	->setOrder('created_at', 'desc')
+    //->addFieldToFilter("status", "1")
+    //->setPageSize(12) // Limit product
+    ->load();
+} else {
+	 $_productCollection = $block->getLoadedProductCollection();
+	 $_productCollection->clear();
+	 $_productCollection->setOrder('created_at', 'desc');
+}
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
 ?>
 <?php if (!$_productCollection->count()): ?>
