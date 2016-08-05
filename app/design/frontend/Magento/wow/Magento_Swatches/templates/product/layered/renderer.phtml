@@ -19,7 +19,7 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
      attribute-code="<?= $swatchData['attribute_code'] ?>" attribute-id="174">
 
     <div class="filter-list">
-        <form action="<?= $curUrl . '' ?>" method="get">
+
             <a class="filter-choose" href="javascript:void(0);"><span
                     class="txt"><?= $swatchData['attribute_code'] ?></span>
                 <span class="filter-sign"></span>
@@ -28,7 +28,7 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
             <div class="filter-box">
                 <div class="swatch-attribute-options clearfix">
                     <?php foreach ($swatchData['options'] as $option => $label): ?>
-                        <a href="<?= $label['link'] ?>" class="swatch-option-link-layered">
+                        <a href="<?= $label['link'] ?>" class="swatch-option-link-layered" id="example1">
                             <?php if (isset($swatchData['swatches'][$option]['type'])) { ?>
                                 <?php switch ($swatchData['swatches'][$option]['type']) {
                                     case '3':
@@ -69,8 +69,6 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
                                     default:
                                         ?>
                                         <label class="sel no-icon-mobile checkbox">
-                                            <input id="check_0" type="checkbox"
-                                                   name="<?= $swatchData['attribute_code'] ?>" value="<?= $option ?>">
                                             <span class="<?= $label['label'] ?>"><?= $label['label'] ?></span>
                                         </label><br>
 
@@ -80,9 +78,9 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
                         </a>
                     <?php endforeach; ?>
                 </div>
-                <input type="submit" value="APPLY" class="filter-submit">
+
             </div>
-        </form>
+
     </div>
 
 
