@@ -1483,6 +1483,7 @@ a {
 
 #page-title-heading {
     font-size: 24px;
+    margin-bottom: 20px;
 }
 
 #maincontent .toolbar-products {
@@ -1551,6 +1552,23 @@ a {
 }
 
 /* fitter list */
+.catalog-category-view .filter-options .Category {
+    display: none;
+}
+
+.catalog-category-view .filter-content .filter-options, .catalog-category-view .filter-content .Color, .catalog-category-view .filter-content .Price {
+    display: inline-block;
+}
+
+.filter-content .filter-current-subtitle {
+    display: inline-block;
+}
+
+.filter-content .items {
+    display: inline-block;
+    background-color: #e1e1e1;
+}
+
 .filter-box {
     display: none;
     z-index: 2;
