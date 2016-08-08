@@ -1552,6 +1552,10 @@ a {
 }
 
 /* fitter list */
+.catalog-category-view .swatch-attribute.c2c_color .swatch-attribute-options {
+    max-height: 300px;
+    overflow-y: scroll;
+}
 .filter-content .filter-current-subtitle {
     display: inline-block;
 }
