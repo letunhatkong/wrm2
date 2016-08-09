@@ -1488,6 +1488,7 @@ a {
 
 #maincontent .toolbar-products {
     margin-bottom: 0;
+    clear: both;
 }
 
 #layered-filter-block .title-sidaber {
@@ -1676,6 +1677,11 @@ dl#narrow-by-list > div {
 
 .catalog-category-view .filter-content .filter-options, .catalog-category-view .filter-content .Color, .catalog-category-view .filter-content .Price {
     display: inline-block;
+}
+
+.catalog-category-view .swatch-attribute.swatch-layered.c2c_color .swatch-attribute-options {
+    overflow-y: scroll;
+    max-height: 400px;
 }
 
 @media only screen and (max-width: 767px) {
