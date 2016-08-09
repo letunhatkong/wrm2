@@ -1549,6 +1549,10 @@ a {
     .page-products .products-grid .product-item {
         width: 50%;
     }
+
+    .page-products .products-grid .product-item:nth-child(2n+1) {
+        clear: both;
+    }
 }
 
 /* fitter list */
@@ -1650,11 +1654,6 @@ dl#narrow-by-list > div {
 .box-price {
     list-style: none;
     padding: 5px;
-}
-
-.catalog-category-view .products {
-    margin: 20px 0;
-    overflow: hidden;
 }
 
 .filter-choose span.txt {
@@ -2020,3 +2019,10 @@ p.headHome {
 }
 
 /* # Checkout */
+
+/* Search page */
+.catalogsearch-result-index .block.filter {
+    display: none;
+}
+
+/* # Search page */
