@@ -299,6 +299,12 @@ body {
     padding: 0 0 5px 10px;
 }
 
+.search-autocomplete {
+    font-size: 12px;
+    color: #000;
+    top: 73px;
+}
+
 /* ---- # search */
 
 /* Mini cart */
