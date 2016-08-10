@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright Â© 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -10,7 +10,7 @@
         <referenceContainer name="header.container">
             <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-"/>
         </referenceContainer>
-        
+
         <referenceContainer name="page.top">
             <block class="Magento\Framework\View\Element\Template" name="navigation.sections" before="-" template="Magento_Theme::html/sections.phtml">
                 <arguments>
@@ -61,7 +61,7 @@
         <!-- # Header -->
 
         <!-- Banner home -->
-        <block class="Magento\Framework\View\Element\Template" name="top.full.banner" template="Magento_Theme::html/top-slider-home.phtml"/>        
+        <block class="Magento\Framework\View\Element\Template" name="top.full.banner" template="Magento_Theme::html/top-slider-home.phtml"/>
         <!-- Banner for static page -->
         <block class="Magento\Framework\View\Element\Template" name="top.full.banner.static" template="Magento_Theme::html/top-slider-static.phtml"/>
         <!--<move element="top.full.banner" destination="page.wrapper" before="main.content" />-->
@@ -72,9 +72,9 @@
         <!--Return Form -->
         <block class="Magento\Framework\View\Element\Template" name="return_form" template="Magento_Theme::html/returnform.phtml" />
         <!--LookBook -->
-        <block class="Magento\Framework\View\Element\Template" name="lookbook" template="Magento_Theme::html/lookbook.phtml" />        
+        <block class="Magento\Framework\View\Element\Template" name="lookbook" template="Magento_Theme::html/lookbook.phtml" />
         <!--Testing-->
-        <block class="Magento\Framework\View\Element\Template" name="testing" template="Magento_Theme::html/test_file.phtml" />        
+        <block class="Magento\Framework\View\Element\Template" name="testing" template="Magento_Theme::html/test_file.phtml" />
 
         <referenceBlock name="sale.reorder.sidebar" remove="true" />
 
