@@ -1550,6 +1550,15 @@ a {
 
 .page-products .products-grid .product-image-photo {
     width: 100%;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    -ms-transition: -ms-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+}
+
+.page-products .products-grid .product-image-photo:hover {
+    transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
 }
 
 @media only screen and (max-width: 992px) {
