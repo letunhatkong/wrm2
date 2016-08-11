@@ -1168,6 +1168,10 @@ body {
     margin: 0 10px 0 0;
 }
 
+.swatch-option.text {
+    max-width: none;
+}
+
 @media only screen and (max-width: 767px) {
     #product_addtocart_form .product-addto-links {
         float: left;
