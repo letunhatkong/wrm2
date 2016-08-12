@@ -1434,13 +1434,6 @@ body {
     display: none;
 }
 
-.catalog-category-view .rym .color {
-    display: none;
-    position: absolute;
-    z-index: 99;
-    background: #fff;
-}
-
 .catalog-category-view .clickColor .sign-color {
     background: url(/pub/media/images/icon/add.png) no-repeat center;
     display: inline-block;
@@ -1452,8 +1445,26 @@ body {
     background: url(/pub/media/images/icon/tru.png) no-repeat center !important;
 }
 
-.catalog-category-view .open + .rym .color {
+.catalog-category-view .rym {
+    position: relative;
+}
+
+.catalog-category-view .rym .color,
+.catalog-category-view .rym .c2c_color {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+}
+
+.catalog-category-view .open + .rym .color,
+.catalog-category-view .open + .rym .c2c_color {
     display: block;
+}
+
+.catalog-category-view .rym .swatch-attribute-options {
+    max-height: none;
+    overflow: hidden;
 }
 
 #cssmenu > ul {
