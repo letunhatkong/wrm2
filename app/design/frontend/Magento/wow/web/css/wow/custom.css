@@ -1434,14 +1434,14 @@ body {
     display: none;
 }
 
-.catalog-category-view .clickColor .sign-color {
+.catalog-category-view .clickColor a > span {
     background: url(/pub/media/images/icon/add.png) no-repeat center;
     display: inline-block;
     height: 10px;
     padding: 0 15px 0 0;
 }
 
-.catalog-category-view .clickColor .sign-open {
+.catalog-category-view .clickColor.open a > span {
     background: url(/pub/media/images/icon/tru.png) no-repeat center !important;
 }
 

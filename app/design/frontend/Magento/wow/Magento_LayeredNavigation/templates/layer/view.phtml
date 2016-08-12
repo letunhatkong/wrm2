@@ -102,10 +102,8 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
                     var isOpen = $(this).hasClass("open");
                     if (isOpen) {
                         $(this).removeClass("open");
-                        $('.clickColor .sign-color').removeClass("sign-open");
                     } else {
                         $(this).addClass("open");
-                        $('.open .sign-color').addClass("sign-open");
                     }
                 });
 
