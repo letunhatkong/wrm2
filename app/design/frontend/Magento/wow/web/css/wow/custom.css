@@ -1420,6 +1420,31 @@ body {
 /* # Detail page */
 
 /* list page */
+.catalog-category-view .product-item-info .size {
+    display: none;
+}
+
+.catalog-category-view .rym .color {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+}
+
+.catalog-category-view .clickColor .sign-color {
+    background: url(/pub/media/images/icon/add.png) no-repeat center;
+    display: inline-block;
+    height: 10px;
+    padding: 0 15px 0 0;
+}
+
+.catalog-category-view .clickColor .sign-open {
+    background: url(/pub/media/images/icon/tru.png) no-repeat center !important;
+}
+
+.catalog-category-view .open + .rym .color {
+    display: block;
+}
 
 #cssmenu > ul {
     list-style: none;
@@ -1561,6 +1586,7 @@ a {
     max-height: 300px;
     overflow-y: scroll;
 }
+
 .filter-content .filter-current-subtitle {
     display: inline-block;
 }
