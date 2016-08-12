@@ -1,0 +1,23 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block \Magento\Swatches\Block\Product\Renderer\Configurable */ ?>
+<div class="clickColor"><a href="javascript:void(0)"><span class="sign-color"></span>Color</a></div>
+<div class="rym swatch-opt-<?= $block->getProduct()->getId() ?>"></div>
+<script>
+    require(["jquery", "jquery/ui", "swatchRenderer"], function ($) {
+        $('.swatch-opt-<?= $block->getProduct()->getId() ?>').SwatchRenderer({
+            selectorProduct: '.product-item-details',
+            onlySwatches: true,
+            enableControlLabel: false,
+            numberToShow: <?= $block->getNumberSwatchesPerProduct(); ?>,
+            jsonConfig: <?= $block->getJsonConfig(); ?>,
+            jsonSwatchConfig: <?= $block->getJsonSwatchConfig(); ?>,
+            mediaCallback: '<?= $block->getMediaCallback() ?>'
+        });
+    });
+</script>
+
