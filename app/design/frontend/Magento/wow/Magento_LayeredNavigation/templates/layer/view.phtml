@@ -43,11 +43,11 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
 
                                 <div class="filter-box sort-by">
                                     <li class="item">
-                                        <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=asc' ?>"><span class="price">Price:Low to High</span></a>
+                                        <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=asc' ?>"><span class="price">Price:Low to Hight</span></a>
                                     </li>
                                     <li class="item">
                                         <a href="<?= $curUrl . '?product_list_order=price&product_list_dir=desc' ?>"><span
-                                                class="price">Price:High to Low</span></a>
+                                                class="price">Price:Hight to Low</span></a>
                                     </li>
                                     <li class="item">
                                         <a href="<?= $curUrl . '?product_list_order=name&product_list_dir=asc' ?>"><span class="price">A to Z</span></a>
@@ -95,6 +95,17 @@ $curUrl = explode("?", $urlInterface->getCurrentUrl())[0];
                     } else {
                         $('.filter-content .open').removeClass('open');
                         $(this).addClass("open");
+                    }
+                });
+
+                $('.clickColor').click(function () {
+                    var isOpen = $(this).hasClass("open");
+                    if (isOpen) {
+                        $(this).removeClass("open");
+                        $('.clickColor .sign-color').removeClass("sign-open");
+                    } else {
+                        $(this).addClass("open");
+                        $('.open .sign-color').addClass("sign-open");
                     }
                 });
 
