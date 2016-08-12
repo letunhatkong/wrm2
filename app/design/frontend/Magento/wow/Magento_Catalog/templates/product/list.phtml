@@ -21,7 +21,7 @@ $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $date =  $_objectManager->create('\Magento\Framework\Stdlib\DateTime\DateTime');
 $today = $date->date();
 $oneMonth =  date('Y-m-d'. ' 00:00:00', strtotime($today. ' - 30 days'));
- 
+
 $storeManager = $_objectManager->get('\Magento\Store\Model\StoreManagerInterface');
 $url = $storeManager->getStore()->getBaseUrl()."new-arrivals.html";
 $urlNow = $_objectManager->get('\Magento\Framework\UrlInterface')->getCurrentUrl();
