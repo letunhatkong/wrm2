@@ -40,8 +40,6 @@ $_productCollection = $productCollection->create()
     ->load();
 } else {
 	 $_productCollection = $block->getLoadedProductCollection();
-	 $_productCollection->clear();
-	 $_productCollection->setOrder('created_at', 'desc');
 }
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
 ?>
