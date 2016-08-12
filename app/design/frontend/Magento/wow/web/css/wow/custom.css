@@ -1462,7 +1462,7 @@ body {
     display: block;
 }
 
-.catalog-category-view .rym .swatch-attribute-options {
+.catalog-category-view .rym .swatch-attribute.c2c_color .swatch-attribute-options {
     max-height: none;
     overflow: hidden;
 }
