@@ -28,35 +28,10 @@ atlassian*
 !/pub/media/images
 !/pub/js
 
-/lib/*.*
-/lib/internal
-/lib/web/css
-/lib/web/extjs
-/lib/web/fonts
-/lib/web/fotorama
-/lib/web/i18n
-/lib/web/images
-/lib/web/jquery
-/lib/web/knockoutjs
-/lib/web/less
-/lib/web/lib
-/lib/web/magnifier
-/lib/web/modernizr
-/lib/web/prototype
-/lib/web/requirejs
-/lib/web/scriptaculous
-/lib/web/tiny_mce
-/lib/web/varien
-/lib/web/*.*
-/lib/web/mage/*
-!/lib/web/mage/gallery
 
 /app/*.*
-/app/code/Magento
 /app/etc
-/app/i18n
 /app/design/adminhtml
-/app/design/frontend/Magento/luma
 
 
 /bin
@@ -66,7 +41,15 @@ atlassian*
 /vendor
 /setup
 /*.*
-!/.htaccess
+.htaccess
 !.gitignore
-
+phpmyadmin
 update
+
+app/design/frontend/Magento/wow/Magento_Theme/templates/html/email_sending.phtml
+app/design/frontend/Magento/wow/Magento_Theme/templates/html/lookbook.phtml
+app/design/frontend/Magento/wow/Magento_Theme/templates/html/lookbook_detail.phtml
+app/design/frontend/Magento/wow/Magento_Theme/templates/html/returnform.phtml
+app/design/frontend/Magento/wow/Magento_Theme/templates/html/top-slider-static.phtml
+app/design/frontend/Magento/wow/Magento_Theme/templates/html/video.phtml
+
