@@ -28,11 +28,9 @@ atlassian*
 !/pub/media/images
 !/pub/js
 
-
 /app/*.*
 /app/etc
 /app/design/adminhtml
-
 
 /bin
 /dev
